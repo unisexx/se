@@ -1,0 +1,7 @@
+# robots.txt for http://www.kpoplover.com/
+
+User-agent: *
+Disallow: /admin/
+Disallow: /config/
+Disallow: /autopost/
+Disallow: /ntunnel_mysql.php
