@@ -269,8 +269,8 @@
 
 <div class="container wrapper">
 <link rel="image_src" href="http://dl.stickershop.line.naver.jp/products/0/0/1/955/android/main.png">
-<div class="fb-like" data-href="https://www.facebook.com/pages/LINE-Thailand-Fanclub/619024168129948" data-width="450" data-show-faces="false" data-send="true"></div>
-<img src="https://fbcdn-sphotos-b-a.akamaihd.net/hphotos-ak-prn2/1175694_642684099097288_817015935_n.png" alt="บริการรับฝากซื้อสติ๊กเกอร์ไลน์ราคาถูก ลายละ 55 บาท ทั้งลายไทย-ต่างประเทศ ของแท้ ไม่มีหาย เชื่อถือได้ 100%">
+<div class="fb-like" data-href="https://www.facebook.com/pages/LINE-Thailand-Fanclub/619024168129948" data-width="450" data-show-faces="false" data-send="true"></div><br clear="all">
+<img src="https://fbcdn-sphotos-f-a.akamaihd.net/hphotos-ak-prn1/s720x720/1381954_666273163405048_60157151_n.png" alt="บริการรับฝากซื้อสติ๊กเกอร์ไลน์ราคาถูก ลายละ 60 บาท ทั้งลายไทย-ต่างประเทศ ของแท้ ไม่มีหาย เชื่อถือได้ 100%">
 <h3 style="float:left;text-indent: -9999px;">LINE Thailand Fanclub Sticker Shop</h3><br>
 <?php
     $json = file_get_contents('http://rate-exchange.appspot.com/currency?from=USD&to=THB&q=1.99');
@@ -378,7 +378,7 @@
             <a href="line/<?php echo $sticker->slug?>" target="_blank" alt="<?php echo $sticker->title?>">
             <div class="caption">
                 <h4><?php echo $sticker->title?></h4>
-                <div class="awesome small red">New</div> <div class="awesome small <?php echo $nation_color[$sticker->category]?>"><?php echo ucfirst($sticker->category)?></div> <div class="awesome small blue">55.-</div>
+                <div class="awesome small red">New</div> <div class="awesome small <?php echo $nation_color[$sticker->category]?>"><?php echo ucfirst($sticker->category)?></div> <div class="awesome small blue">60.-</div>
                 <br clear="all">
             </div>
             </a>
@@ -401,7 +401,7 @@
             <a href="line/<?php echo $sticker->slug?>" target="_blank" alt="<?php echo $sticker->title?>">
             <div class="caption">
                 <h4><?php echo $sticker->title?></h4>
-                <div class="awesome small <?php echo $nation_color[$sticker->category]?>"><?php echo ucfirst($sticker->category)?></div> <div class="awesome small blue">55.-</div>
+                <div class="awesome small <?php echo $nation_color[$sticker->category]?>"><?php echo ucfirst($sticker->category)?></div> <div class="awesome small blue">60.-</div>
                 <br clear="all">
             </div>
             </a>
@@ -429,7 +429,7 @@
             <a href="line/<?php echo $sticker->slug?>" target="_blank" alt="<?php echo $sticker->title?>">
             <div class="caption">
                 <h4><?php echo $sticker->title?></h4>
-                <div class="awesome small <?php echo $nation_color[$sticker->category]?>"><?php echo ucfirst($sticker->category)?></div> <div class="awesome small blue"><?php echo ($sticker->sticker_code == 809)?'80':'55';?>.-</div>
+                <div class="awesome small <?php echo $nation_color[$sticker->category]?>"><?php echo ucfirst($sticker->category)?></div> <div class="awesome small blue"><?php echo ($sticker->sticker_code == 809)?'90':'60';?>.-</div>
                 <br clear="all">
             </div>
             </a>
