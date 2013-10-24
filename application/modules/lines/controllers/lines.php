@@ -8,7 +8,7 @@ class Lines extends Public_Controller {
     
     function index(){
     	$data['stickers_update'] = new Line();
-        $data['stickers_update']->where('status = "approve"')->order_by('id','desc')->get(5);
+        $data['stickers_update']->where('status = "approve"')->order_by('sticker_code','desc')->get(5);
 		
         $data['stickers_japan'] = new Line();
         $data['stickers_japan']->where('category <> "global" and status = "approve"')->order_by('sticker_code','desc')->get();
