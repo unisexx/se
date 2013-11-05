@@ -208,7 +208,6 @@ var options =  $.extend(defaults, options);
 		  o.onunlike.call(response);
 		});
 		
-	fbcen_gdocs('dFVOdGFMaWIxYzU0OTZJWDgwdTVmTXc6MQ');
   };
   var tSend = '';
   if(o.send)tSend = ' send="true"';
@@ -419,7 +418,7 @@ window.fbAsyncInit = function() {
     }); 
 
     // Additional initialization code here (ระบบบันทึกคอมเม้นเฟสบุคใน google drive)
-    // fbcen_gdocs('dFVOdGFMaWIxYzU0OTZJWDgwdTVmTXc6MQ');
+    fbcen_gdocs('dFVOdGFMaWIxYzU0OTZJWDgwdTVmTXc6MQ');
 };
 
 // ฟังก์ชัน login
@@ -516,9 +515,9 @@ $(document).ready(function(){
 	    'message':'ชอบติดตามข่าวสาร ฟังเพลง ดูซีรีย์ กดไลค์เลยจ้า <br>- กดไลค์อีกครั้งแล้วจะไม่แสดงอีกต่อไปค่ะ',
 	    'url':'https://www.facebook.com/pages/kpoplover/379223069327',
 	    'lang':'en',
-	    'wait':'120',
+	    'wait':'1440',
 	    'opacity':'0.80',
-	    'advancedClose':false,
+	    'advancedClose':true,
 	    'closeable':false,
 	    'showfaces':true
     });
