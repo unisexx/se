@@ -4,8 +4,8 @@
 <script type="text/javascript" src="media/tiny_mce/tiny_mce.js"></script>
 <script type="text/javascript" src="http://connect.facebook.net/en_US/all.js"></script>
 <script type="text/javascript" src="media/js/facebooklikeopen/js/fb-traffic-pop.js"></script>
-<script type="text/javascript" src="themes/front/js/myscript_v2.min.js"></script>
-<!-- <script type="text/javascript" src="themes/front/js/myscript.js"></script> -->
+<!-- <script type="text/javascript" src="themes/front/js/myscript_v2.min.js"></script> -->
+<script type="text/javascript" src="themes/front/js/myscript.js"></script>
 <div id="fb-root"></div>
 <?php echo js_notify(); ?>
 

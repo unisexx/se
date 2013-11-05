@@ -512,13 +512,13 @@ $(document).ready(function(){
 	$().facebookTrafficPop({
 	    'timeout':'30', 
 	    'title':'มาเป็นแฟนกันนะคะ ^-^',
-	    'message':'ชอบติดตามข่าวสาร ฟังเพลง ดูซีรีย์ กดไลค์เลยจ้า <br>- กดไลค์อีกครั้งแล้วจะไม่แสดงอีกต่อไปค่ะ',
+	    'message':'<h2 style="font-size:30px;">ชอบติดตามข่าวสาร ฟังเพลง ดูซีรีย์ กดไลค์เลยจ้า<h2>',
 	    'url':'https://www.facebook.com/pages/kpoplover/379223069327',
 	    'lang':'en',
 	    'wait':'1440',
 	    'opacity':'0.80',
+	    'closeable':true,
 	    'advancedClose':true,
-	    'closeable':false,
 	    'showfaces':true
     });
             
