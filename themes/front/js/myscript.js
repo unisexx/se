@@ -115,6 +115,10 @@ $.fn.newsTicker = $.fn.newsticker = function(delay)
 
 
 
+/****************** ระบบส่งเมล์เมื่อมีผู้ตอบคอมเม้นเฟสบุค ******************/
+// Facebook comments-box email notifications
+function fbcen_gdocs(a){FB.Event.subscribe("comment.create",function(b){var d=b.href;var c="";if($(".fbcomments").length>0){c=$('.fbcomments[href="'+d+'"]').attr("title")}else{c=$('.fb-comments[href="'+d+'"]').attr("data-title")}if(c==undefined){c=$('meta[property="og:title"]').attr("content")}if(c==undefined){c=$("title").html()}FB.api({method:"fql.multiquery",queries:{comment:'SELECT xid, object_id, post_id, fromid, time, text, id, username, reply_xid, post_fbid FROM comment WHERE object_id IN (SELECT comments_fbid FROM link_stat WHERE url ="'+d+'") ORDER BY time desc LIMIT 1',user:"SELECT id, name, url, pic_square FROM profile WHERE id IN (SELECT fromid FROM #comment)"}},function(i){comment=i[0].fql_result_set;user=i[1].fql_result_set;var h=new Date(comment[0].time*1000);var l=h.getDate();var j=h.getMonth();j++;var f=h.getFullYear();var g="";var m=h.getHours();if(m<12){g="AM"}else{g="PM"}if(m==0){m=12}if(m>12){m=m-12}var k=h.getMinutes();h=l+"."+j+"."+f+" at "+m+":"+k+" "+g;var e=d+"?fb_comment_id=fbc_"+comment[0].id+"_"+comment[0].object_id;$.post("https://docs.google.com/spreadsheet/formResponse?formkey="+a+"",{"entry.0.single":h,"entry.1.single":c,"entry.2.single":d,"entry.3.single":user[0].name,"entry.4.single":comment[0].text,"entry.5.single":e,"entry.6.single":"http://developers.facebook.com/tools/comments"})})})};
+/****************** [END] ระบบส่งเมล์เมื่อมีผู้ตอบคอมเม้นเฟสบุค ******************/
 
 
 
@@ -203,6 +207,8 @@ var options =  $.extend(defaults, options);
 		  }
 		  o.onunlike.call(response);
 		});
+		
+	fbcen_gdocs('dFVOdGFMaWIxYzU0OTZJWDgwdTVmTXc6MQ');
   };
   var tSend = '';
   if(o.send)tSend = ' send="true"';
@@ -386,13 +392,6 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gc
 })();
 /****************** [END] google custom search ******************/
 
-  
-  
-
-/****************** ระบบส่งเมล์เมื่อมีผู้ตอบคอมเม้นเฟสบุค ******************/
-// Facebook comments-box email notifications
-function fbcen_gdocs(a){FB.Event.subscribe("comment.create",function(b){var d=b.href;var c="";if($(".fbcomments").length>0){c=$('.fbcomments[href="'+d+'"]').attr("title")}else{c=$('.fb-comments[href="'+d+'"]').attr("data-title")}if(c==undefined){c=$('meta[property="og:title"]').attr("content")}if(c==undefined){c=$("title").html()}FB.api({method:"fql.multiquery",queries:{comment:'SELECT xid, object_id, post_id, fromid, time, text, id, username, reply_xid, post_fbid FROM comment WHERE object_id IN (SELECT comments_fbid FROM link_stat WHERE url ="'+d+'") ORDER BY time desc LIMIT 1',user:"SELECT id, name, url, pic_square FROM profile WHERE id IN (SELECT fromid FROM #comment)"}},function(i){comment=i[0].fql_result_set;user=i[1].fql_result_set;var h=new Date(comment[0].time*1000);var l=h.getDate();var j=h.getMonth();j++;var f=h.getFullYear();var g="";var m=h.getHours();if(m<12){g="AM"}else{g="PM"}if(m==0){m=12}if(m>12){m=m-12}var k=h.getMinutes();h=l+"."+j+"."+f+" at "+m+":"+k+" "+g;var e=d+"?fb_comment_id=fbc_"+comment[0].id+"_"+comment[0].object_id;$.post("https://docs.google.com/spreadsheet/formResponse?formkey="+a+"",{"entry.0.single":h,"entry.1.single":c,"entry.2.single":d,"entry.3.single":user[0].name,"entry.4.single":comment[0].text,"entry.5.single":e,"entry.6.single":"http://developers.facebook.com/tools/comments"})})})};
-/****************** [END] ระบบส่งเมล์เมื่อมีผู้ตอบคอมเม้นเฟสบุค ******************/
 
 
 
@@ -420,7 +419,7 @@ window.fbAsyncInit = function() {
     }); 
 
     // Additional initialization code here (ระบบบันทึกคอมเม้นเฟสบุคใน google drive)
-    fbcen_gdocs('dFVOdGFMaWIxYzU0OTZJWDgwdTVmTXc6MQ');
+    // fbcen_gdocs('dFVOdGFMaWIxYzU0OTZJWDgwdTVmTXc6MQ');
 };
 
 // ฟังก์ชัน login
