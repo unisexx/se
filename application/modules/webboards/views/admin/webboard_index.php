@@ -10,6 +10,7 @@
 <?php echo $webboard_quizs->pagination()?>
 <table class="list" id="weblinks-list">
 	<tr>
+	    <th>สถานะ</th>
 		<th>หัวข้อ</th>
 		<th>เข้าชม</th>
 		<th>ตอบ</th>
@@ -24,6 +25,7 @@
 	
 	<?php foreach ($webboard_quizs as $webboard_quiz):?>
 	<tr <?php echo cycle()?>>
+	    <td><input type="checkbox" name="status" value="<?php echo $webboard_quiz->id ?>" <?php echo ($webboard_quiz->status=="approve")?'checked="checked"':'' ?> <?php echo (@$_POST['status']=="approve")?'':'' ?> /></td>
 		<td><?php echo $webboard_quiz->title ?></td>
 		<td><?php echo $webboard_quiz->counter ?></td>
 		<td><?php echo $webboard_quiz->webboard_answer->result_count() ?></td>

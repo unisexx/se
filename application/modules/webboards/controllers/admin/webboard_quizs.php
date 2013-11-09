@@ -12,7 +12,8 @@ Class Webboard_quizs extends Admin_Controller{
 		if(!empty($_GET['webboard_category_id']))$webboard_quizs->where('webboard_category_id',$_GET['webboard_category_id']);
 		$data['webboard_quizs'] = $webboard_quizs->order_by('id','desc')->get_page(20);
 		
-		$this->template->append_metadata(js_lightbox());
+		// $this->template->append_metadata(js_lightbox());
+        $this->template->append_metadata(js_checkbox('approve'));
 		$this->template->build('admin/webboard_index',$data);
 	}
 	
@@ -46,5 +47,15 @@ Class Webboard_quizs extends Admin_Controller{
 		}
 		redirect('webboards/admin/webboard_quizs');
 	}
+    
+    function approve($id)
+    {
+        if($_POST)
+        {
+            $quiz = new Webboard_quiz($id);
+            $quiz->from_array($_POST);
+            $quiz->save();
+        }
+    }
 }
 ?>

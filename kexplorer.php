@@ -32,6 +32,7 @@ if($links)
             $data['detail'] = $detail;
 			$data['created'] = time();
             $data['user_id'] = 1610;
+            $data['status'] = 'approve';
 		    $data['url'] = $link;
             $data['ip'] = $_SERVER['REMOTE_ADDR'];
             $data['stick'] = 0;

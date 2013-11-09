@@ -36,9 +36,9 @@ class Webboards extends Public_Controller
 		}
 		$data['category_id'] = $data['category']->id;
 		$data['webboard_quizs'] = new Webboard_quiz();
-		$data['webboard_quizs']->where("webboard_category_id = ".$data['category_id']." and stick = 0")->order_by('id','desc')->get_page();
+		$data['webboard_quizs']->where("webboard_category_id = ".$data['category_id']." and stick = 0 and status ='approve'")->order_by('id','desc')->get_page();
 		$data['webboard_quizs_stick'] = new Webboard_quiz();
-		$data['webboard_quizs_stick']->where("webboard_category_id = ".$data['category_id']." and stick = 1")->order_by('id','desc')->get_page();
+		$data['webboard_quizs_stick']->where("webboard_category_id = ".$data['category_id']." and stick = 1 and status ='approve'")->order_by('id','desc')->get_page();
 		$this->template->title($data['category']->name.' - Kpoplover เว็บบอร์ด');
 		$this->template->build('webboard_topic_list',$data);
 	}
@@ -102,6 +102,7 @@ class Webboards extends Public_Controller
 				}
 				$_POST['group_id']=(@isset($_POST['group_id']))? $_POST['group_id']:'0';
                 $webboard_quiz->slug = clean_url($_POST['title']);
+                $webboard_quiz->status = 'approve';
 				$webboard_quiz->ip = $this->input->ip_address();
 				$webboard_quiz->from_array($_POST);
 				$webboard_quiz->save();
@@ -327,10 +328,10 @@ class Webboards extends Public_Controller
 		$music = new Webboard_quiz();
         $gallery = new Webboard_quiz();
         $series = new Webboard_quiz();
-        $data['alls'] = $all->where("webboard_category_id <> 11 and webboard_category_id <> 12 and webboard_category_id <> 14 and webboard_category_id <> 16")->order_by('id','desc')->limit(5)->get();
-		$data['musics'] = $music->where("webboard_category_id = 12")->order_by('id','desc')->limit(15)->get();
-        $data['galleries'] = $gallery->where("webboard_category_id = 16")->order_by('id','random')->limit(8)->get();
-        $data['series'] = $series->where("webboard_category_id = 14")->order_by('id','desc')->limit(5)->get();
+        $data['alls'] = $all->where("webboard_category_id <> 11 and webboard_category_id <> 12 and webboard_category_id <> 14 and webboard_category_id <> 16 and status ='approve'")->order_by('id','desc')->limit(5)->get();
+		$data['musics'] = $music->where("webboard_category_id = 12 and status ='approve'")->order_by('id','desc')->limit(15)->get();
+        $data['galleries'] = $gallery->where("webboard_category_id = 16 and status ='approve'")->order_by('id','random')->limit(8)->get();
+        $data['series'] = $series->where("webboard_category_id = 14 and status ='approve'")->order_by('id','desc')->limit(5)->get();
 		$this->load->view('inc_home',$data);
 	}
 	
