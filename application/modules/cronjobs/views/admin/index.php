@@ -32,4 +32,8 @@
 		<td>ซีรีย์โคตรฮิต</td>
 		<td><a href="/kh_se.php" class="btn" target="_blank">โหลดสคริปท์</a></td>
 	</tr>
+	<tr>
+		<td>kpopexplorer</td>
+		<td><a href="/kexplorer.php" class="btn" target="_blank">โหลดสคริปท์</a></td>
+	</tr>
 </table>

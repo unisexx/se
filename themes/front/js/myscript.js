@@ -515,7 +515,7 @@ $(document).ready(function(){
 	    'message':'<h2 style="font-size:30px;">ชอบติดตามข่าวสาร ฟังเพลง ดูซีรีย์ กดไลค์เลยจ้า<h2>',
 	    'url':'https://www.facebook.com/pages/kpoplover/379223069327',
 	    'lang':'en',
-	    'wait':'1440',
+	    'wait':'120',
 	    'opacity':'0.80',
 	    'closeable':true,
 	    'advancedClose':true,
