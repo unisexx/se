@@ -17,7 +17,8 @@
 	<li <?php echo menu_active('newsletters','newsletters')?>><a href="newsletters/admin/newsletters">Newsletters</a></li>
 	<li <?php echo menu_active('vdos','uncategory')?>><a href="vdos/admin/vdos/uncategory">Uncategory</a></li>
 	<li <?php echo menu_active('vdos','tmp')?>><a href="vdos/admin/vdos/tmp">Video Tmp</a></li>
-	<li <?php echo menu_active('vdos','dead_link')?>><a href="vdos/admin/vdos/dead_link">Dead links</a></li>
+	<!-- <li <?php echo menu_active('vdos','dead_link')?>><a href="vdos/admin/vdos/dead_link">Dead links</a></li> -->
+	<li <?php echo menu_active('vdos','dead_link')?>><a href="vdos/admin/vdos/edit_all">Edit All</a></li>
 	<li <?php echo menu_active('contacts','contacts')?>><a href="contacts/admin/contacts">Contacts</a></li>
 	<li <?php echo menu_active('cronjobs','cronjobs')?>><a href="cronjobs/admin/cronjobs">Scripts</a></li>
 	<li <?php echo menu_active('lines','lines')?>><a href="lines/admin/lines">LINE Sticker Shop</a></li>
