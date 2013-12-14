@@ -287,8 +287,7 @@ function get_facebook_thumbnail_from_youtube_iframe($iframeCode){
 
 function addThis(){
     return '<div id="addthis-wrapper"><div class="addthis">
-<iframe src="https://www.facebook.com/plugins/like.php?app_id=136698876474938&href=http://www.kpoplover.com'.$_SERVER['PATH_INFO'].'&send=true&layout=button_count&width=90&show_faces=false&action=like&colorscheme=light&font&height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:90px; height:21px;" allowTransparency="true"></iframe>
-<a class="facebook-sharer" href="https://www.facebook.com/sharer/sharer.php?u=http://www.kpoplover.com'.$_SERVER['PATH_INFO'].'" title="Share" target="_blank"><img width="60px" height="20px" src="http://c.s1sf.com/vi/0/di/fb_share_button.png" alt="Facebook Share Button" style="vertical-align: top; margin-right:8px;"></a>
+<iframe src="https://www.facebook.com/plugins/like.php?app_id=136698876474938&href=http://www.kpoplover.com'.$_SERVER['PATH_INFO'].'&send=true&layout=button_count&width=135&show_faces=false&action=like&colorscheme=light&font&height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:135px; height:21px;" allowTransparency="true"></iframe>
 <g:plusone size="medium"></g:plusone>
 <a href="http://www.kpoplover.com'.$_SERVER['PATH_INFO'].'" class="twitter-share-button" data-url="http://www.kpoplover.com'.$_SERVER['PATH_INFO'].'" data-via="your_screen_name" data-lang="en" data-related="anywhereTheJavascriptAPI">Tweet</a>
 </div></div><br><br>';
