@@ -29,16 +29,16 @@ if($links)
             $data['url'] = $link;
             $data['type'] = 'music core';
 			$data['status'] = 'approve';
-            $data['thumb_1'] = $html->find(".playlist-video-item span.yt-thumb-clip-inner img",1)->src;
-            $data['thumb_2'] = $html->find(".playlist-video-item span.yt-thumb-clip-inner img",2)->src;
-            $data['thumb_3'] = $html->find(".playlist-video-item span.yt-thumb-clip-inner img",3)->src;
-            $data['thumb_4'] = $html->find(".playlist-video-item span.yt-thumb-clip-inner img",4)->src;
-			$data['thumb_5'] = $html->find(".playlist-video-item span.yt-thumb-clip-inner img",5)->src;
-			$data['thumb_6'] = $html->find(".playlist-video-item span.yt-thumb-clip-inner img",6)->src;
-			$data['thumb_7'] = $html->find(".playlist-video-item span.yt-thumb-clip-inner img",7)->src;
-			$data['thumb_8'] = $html->find(".playlist-video-item span.yt-thumb-clip-inner img",8)->src;
-			$data['thumb_9'] = $html->find(".playlist-video-item span.yt-thumb-clip-inner img",9)->src;
-			$data['thumb_10'] = $html->find(".playlist-video-item span.yt-thumb-clip-inner img",10)->src;
+            $data['thumb_1'] = $html->find(".playlist-video-item span.yt-thumb-clip img",1)->src;
+            $data['thumb_2'] = $html->find(".playlist-video-item span.yt-thumb-clip img",2)->src;
+            $data['thumb_3'] = $html->find(".playlist-video-item span.yt-thumb-clip img",3)->src;
+            $data['thumb_4'] = $html->find(".playlist-video-item span.yt-thumb-clip img",4)->src;
+			$data['thumb_5'] = $html->find(".playlist-video-item span.yt-thumb-clip img",5)->src;
+			$data['thumb_6'] = $html->find(".playlist-video-item span.yt-thumb-clip img",6)->src;
+			$data['thumb_7'] = $html->find(".playlist-video-item span.yt-thumb-clip img",7)->src;
+			$data['thumb_8'] = $html->find(".playlist-video-item span.yt-thumb-clip img",8)->src;
+			$data['thumb_9'] = $html->find(".playlist-video-item span.yt-thumb-clip img",9)->src;
+			$data['thumb_10'] = $html->find(".playlist-video-item span.yt-thumb-clip img",10)->src;
 			
 			$orlist = explode(" ", $data['title']);
 			$data['orderlist'] = $orlist[1];
@@ -70,7 +70,7 @@ else
 function get_link()
 {
     global $db;
-    $html = file_get_html('http://www.youtube.com/show/showmusiccore/videos?sort=dd&flow=grid&view=7');
+    $html = file_get_html('http://www.youtube.com/show/showmusiccore');
     foreach($html->find('.channels-content-item') as $key => $data)
     {
     	$link = $data->find('a',0)->href;

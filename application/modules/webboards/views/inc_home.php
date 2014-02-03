@@ -35,7 +35,7 @@
         </div>
     </div>
 </div>
-<br clear="all">
+<!-- <br clear="all">
 <div class="webboard_inchome">
 
     <div class="span4">
@@ -58,5 +58,5 @@
     <div class="span9">
         <a href="webboards"><div class="right btn btn-mini" type="button">ดูเว็บบอร์ดทั้งหมด</div></a>
     </div>
-</div>
+</div> -->
 
