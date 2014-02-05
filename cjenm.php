@@ -31,7 +31,7 @@ if($links)
         $data['detail'] = '<iframe width="560" height="315" src="//www.youtube.com/embed/'.getYouTubeIdFromURL($url).'" frameborder="0" allowfullscreen></iframe>';
         $data['created'] = time();
         $data['status'] = 'approve';
-        $data['chanel'] = 'loen';
+        $data['chanel'] = 'cjenm';
         $db->AutoExecute('mvs',$data,'INSERT');
         print "<br>".++$key." $link insert";
         unset($html);
@@ -49,7 +49,7 @@ else
 function get_link()
 {
     global $db;
-    $html = file_get_html('http://www.youtube.com/user/LOENENT/videos');
+    $html = file_get_html('http://www.youtube.com/user/CJENMMUSIC/videos');
     foreach($html->find('#video-page-content .yt-lockup-title') as $key => $data)
     {
         if($key == 0 )$next = $data->find('a',0)->href;
@@ -57,7 +57,7 @@ function get_link()
         {
             // $url = $data->find('a',0)->href;
             $url = "http://www.youtube.com".$data->find('a',0)->href;
-            $check = $db->GetOne('select url from mvs where chanel = "loen" and url = ?',array($url));
+            $check = $db->GetOne('select url from mvs where chanel = "cjenm" and url = ?',array($url));
              if(!$check)
              {
                  $feed[] =  $data->find('a',0)->href;
