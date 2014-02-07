@@ -1,8 +1,8 @@
 #!/usr/local/bin/php
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <!-- <form action="" method="get">
-	<input type="text" name="link">
-	<input type="submit">
+    <input type="text" name="link">
+    <input type="submit">
 </form> -->
 <?php
 set_time_limit(0); 
@@ -16,16 +16,21 @@ $db->Execute('SET character_set_results=utf8');
 $db->Execute('SET collation_connection=utf8_unicode_ci');
 $db->Execute('SET NAMES utf8');
 
+// echo "<pre>";
 // print_r(get_link());
-$links = get_link();
-if($links)
+// echo "</pre>";
+
+// $links = get_link();
+
+$html = file_get_html("http://www.youtube.com/user/LOENENT/videos");
+foreach($html->find('#video-page-content .yt-lockup-title') as $key => $row)
 {
-    foreach ($links as $key => $link)
+    $url = "http://www.youtube.com".$row->find('a',0)->href;
+    $check = $db->GetOne('select url from mvs where chanel = "loen" and url = ?',array($url));
+    if(!$check)
     {
-        $url = "http://www.youtube.com".$link;
-        $html = file_get_html($url);
         $data['url'] = $url;
-        $data['title'] = $html->find('span.title',$key)->plaintext;
+        $data['title'] = trim($row->find('a',0)->plaintext);
         $data['slug'] = clean_url($data['title']);
         $data['video_script'] = $url;
         $data['detail'] = '<iframe width="560" height="315" src="//www.youtube.com/embed/'.getYouTubeIdFromURL($url).'" frameborder="0" allowfullscreen></iframe>';
@@ -33,60 +38,55 @@ if($links)
         $data['status'] = 'approve';
         $data['chanel'] = 'loen';
         $db->AutoExecute('mvs',$data,'INSERT');
-        print "<br>".++$key." $link insert";
+        print "<br>".++$key." $url insert";
         unset($html);
         unset($data);
     }
-    print "<br>".count($links)." records updated";
-}
-else
-{
-    print('<br>no data updated');
 }
 
 
 /*------------------------function--------------------------*/
-function get_link()
-{
-    global $db;
-    $html = file_get_html('http://www.youtube.com/user/LOENENT/videos');
-    foreach($html->find('#video-page-content .yt-lockup-title') as $key => $data)
-    {
-        if($key == 0 )$next = $data->find('a',0)->href;
-        if (!preg_match("/^\//", $data->href)) 
-        {
-            // $url = $data->find('a',0)->href;
-            $url = "http://www.youtube.com".$data->find('a',0)->href;
-            $check = $db->GetOne('select url from mvs where chanel = "loen" and url = ?',array($url));
-             if(!$check)
-             {
-                 $feed[] =  $data->find('a',0)->href;
-             }
-             else
-             {
-                 if(isset($feed))
-                 {
-                     sort($feed);
-                     return $feed;
-                 }
-                 else
-                 {
-                     return false;
-                 }
-             }
-                
-        } 
-    }
-    if(isset($feed))
-    {
-        sort($feed);
-        return $feed;
-    }
-    else
-    {
-        return false;
-    }
-}
+// function get_link()
+// {
+    // global $db;
+    // $html = file_get_html('http://www.youtube.com/user/CJENMMUSIC/videos');
+    // foreach($html->find('#video-page-content .yt-lockup-title') as $key => $data)
+    // {
+        // if($key == 0 )$next = $data->find('a',0)->href;
+        // if (!preg_match("/^\//", $data->href)) 
+        // {
+            // // $url = $data->find('a',0)->href;
+            // $url = "http://www.youtube.com".$data->find('a',0)->href;
+            // $check = $db->GetOne('select url from mvs where chanel = "cjenm" and url = ?',array($url));
+             // if(!$check)
+             // {
+                 // $feed[] =  $data->find('a',0)->href;
+             // }
+             // else
+             // {
+                 // if(isset($feed))
+                 // {
+                     // sort($feed);
+                     // return $feed;
+                 // }
+                 // else
+                 // {
+                     // return false;
+                 // }
+             // }
+//                 
+        // } 
+    // }
+    // if(isset($feed))
+    // {
+        // sort($feed);
+        // return $feed;
+    // }
+    // else
+    // {
+        // return false;
+    // }
+// }
 
 function getYouTubeIdFromURL($url) 
 {
