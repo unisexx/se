@@ -63,6 +63,12 @@ $route['มิวสิควีดีโอเพลงเกาหลี'] = '
 $route['line'] = 'lines';
 $route['line/([^/]+)'] = 'lines/view/$1';
 $route['line/list'] = 'lines/lists';
+
+// LINE Sticker Shop
+$route['sticker'] = 'stickers';
+$route['sticker/([^/]+)'] = 'stickers/view/$1';
+$route['sticker/list'] = 'stickers/lists';
+$route['theme/([^/]+)'] = 'stickers/theme/$1';
  
 /* Ex : $route['contents/([^/]+)'] = "contents/index/$1"; */
 /* End of file routes.php */

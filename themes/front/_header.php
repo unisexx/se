@@ -37,6 +37,10 @@
 <header>
 <div class="container header-blk">
 	<div class="row">
+		<div class="alert alert-block span12" style="background-color:#fff;border:2px dotted red; padding-top:0px;padding-bottom:0px;">
+            <a href="http://www.kpoplover.com/sticker" target="_blank" style="color:#000; text-shadow: 0 0 0.2em #8F7"><h3 style="text-align: center; background: yellow;">สนใจฝากซื้อสติ๊กเกอร์ไลน์ของแท้โดยทีมงาน kpoplover คลิกเลยจ้า</h3></a>
+        </div>
+		<!--
 	    <?php $random = rand(1,2);?>
 	    <?php if($random == 1):?>
 	        <div class="alert alert-block span12" style="background-color:#fff;border:2px dotted red; padding-top:0px;padding-bottom:0px;">
@@ -47,6 +51,7 @@
                 <a href="http://www.line2me.in.th" target="_blank" style="color:#000; text-shadow: 0 0 0.2em #8F7"><h3 style="text-align: center; background: yellow;">คนไหนโสด อยู่คนเดียว เหงาๆ อยากมีเพื่อนคุย มาแลกไอดีไลน์กันที่นี่ได้เลยจ้า~</h3></a>
             </div>
 	    <?php endif;?>
+	    -->
         <div class="span2">
             <a href="http://www.kpoplover.com" title="อัพเดทข่าวเกาหลี เพลงเกาหลี ซีรีย์เกาหลีใหม่ล่าสุด - Kpoplover">Kpoplover Online</a>
         </div>

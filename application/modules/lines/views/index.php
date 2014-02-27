@@ -243,7 +243,7 @@
     <?php echo @$template['metadata'] ?>
 </head>
 <body>
-<?php $nation_color = array('global'=>'black','japan'=>'green','korea'=>'brown','spain'=>'magenta','india'=>'yellow');?>
+<?php $nation_color = array('global'=>'black','taiwan'=>'green','japan'=>'red','korea'=>'brown','spain'=>'magenta','india'=>'yellow','???'=>'???');?>
 <header id="blog-header">
     <hgroup class="container">
         <h1 id="blog-title"><a href="http://www.kpoplover.com/line">LINE@STICKERS SHOP</a></h1>
@@ -273,8 +273,8 @@
 <img src="https://fbcdn-sphotos-f-a.akamaihd.net/hphotos-ak-prn1/s720x720/1381954_666273163405048_60157151_n.png" alt="บริการรับฝากซื้อสติ๊กเกอร์ไลน์ราคาถูก ลายละ 60 บาท ทั้งลายไทย-ต่างประเทศ ของแท้ ไม่มีหาย เชื่อถือได้ 100%">
 <h3 style="float:left;text-indent: -9999px;">LINE Thailand Fanclub Sticker Shop</h3><br>
 <?php
-    $json = file_get_contents('http://rate-exchange.appspot.com/currency?from=USD&to=THB&q=1.99');
-    $data = json_decode($json);
+    // $json = file_get_contents('http://rate-exchange.appspot.com/currency?from=USD&to=THB&q=1.99');
+    // $data = json_decode($json);
     // print_r($data);
     // echo $date->rate;
     // stdClass Object ( [to] => THB [rate] => 32.2601458 [from] => USD [v] => 64.197690142 )
