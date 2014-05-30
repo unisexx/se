@@ -3,8 +3,9 @@
     <h2 class="header">เพลงเกาหลี</h2>
         <div class="row board-music">
         <?php foreach($musics as $music):?>
-            <div class="span2">
+            <div class="span2" style="position: relative;">
                 <a class="img" href="webboards/view_topic/<?=$music->slug?>/<?=$music->id?>" target="_blank"><?=get_img_from_detail($music->detail,100,100,1,"title='".$music->title."' alt='".$music->title."'")?></a>
+                <?=(datediff(datetime2date($music->created)) == 0)?'<img src="themes/front/images/new.png" style="position: absolute; right: 20px; top: 0;" alt="ใหม่">':'';?>
                 <div>
                     <a href="webboards/view_topic/<?=$music->slug?>/<?=$music->id?>" target="_blank"><?=$music->title?></a>
                 </div>

@@ -26,8 +26,8 @@ if($links)
             $data['webboard_category_id'] = 12;
             $data['type'] = 'normal';
             $detail = '';
-            for($i=0;$i<count($html->find('div.entry-content',0)->find('p'));$i++){
-            $detail .= "<p>".$html->find('div.entry-content',0)->find('p',$i)->innertext."</p>";
+            for($i=0;$i<count($html->find('.post-entry',0)->find('p'));$i++){
+            $detail .= "<p>".$html->find('.post-entry',0)->find('p',$i)->innertext."</p>";
             }
             $data['detail'] = $detail;
 			$data['created'] = time();

@@ -21,8 +21,15 @@ $(document).ready(function(){
 <form action="vdos/admin/vdos/uncategory_save" method="post" enctype="multipart/form-data" id="gallery_form">
 <table class="form">
 	<tr>
-		<th>ชื่อ:</th>
-		<td><input class="inputTitle" type="text" name="title" value="<?php echo $vdo->title?>"></td>
+		<th>ตอนที่:</th>
+		<td>
+			<!-- <input class="inputTitle" type="text" name="title" value="<?php echo $vdo->title?>"> -->
+			<select name="title">
+			<?php for($i=01;$i<=60;$i++):?>
+				<option value="EP<?=($i<10) ? "0" . $i  :  $i ;?>">EP<?=($i<10) ? "0" . $i  :  $i ;?></option>
+			<?php endfor;?>
+			</select>
+		</td>
 	</tr>
 	<tr>
 		<th style="vertical-align: top;">วีดีโอสคริป :</th>
