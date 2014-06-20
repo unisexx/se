@@ -84,7 +84,7 @@ class Newsletters_email_lists extends Admin_Controller
 			$the_url = isset($_POST['url']) ? htmlspecialchars($_POST['url']) : '';
 			if (isset($_POST['url']) && !empty($_POST['url'])) {
 			  // fetch data from specified url
-			  $text = file_get_contents($_POST['url']);
+			  $text = file_get_contents($_POST['url'].'/contactus');
 			}
 			// parse emails
 			if (!empty($text)) {
