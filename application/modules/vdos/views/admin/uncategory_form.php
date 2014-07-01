@@ -15,7 +15,8 @@ $(document).ready(function(){
 <h1><a href="vdos/admin/vdos/uncategory">วิดิทัศน์</a> » <?=$vdo->title?></h1>
 <div style="width:305px; position: fixed; top: 192px; right: 30px;">
     <textarea name="geturlPaser" style="width:300px; height:100px;"><?=$vdo->url?></textarea><br>
-    <input id="getlink" type="button" value=" Get Link!!! "> <span class="loadicon" style="display:none;"><img src="media/images/ajax-loader.gif"></span><br>
+    <input id="getlink" type="button" value=" Get Link!!! "> <span class="loadicon" style="display:none;"><img src="media/images/ajax-loader.gif"></span>
+    <a href="<?=$vdo->url?>" target="_blank"><input type="button" value="Goto web->"></a><br>
     <div id="result"></div>
 </div>
 <form action="vdos/admin/vdos/uncategory_save" method="post" enctype="multipart/form-data" id="gallery_form">
