@@ -17,37 +17,32 @@ if($links)
 {
     foreach ($links as $key => $link){
         $url = "http://www.youtube.com".$link;
+        // $url = "http://www.youtube.com/playlist?list=CLsIsTAmNgUQg";
 
             $html = file_get_html($url);
-            $data['title'] = trim($html->find('h2.epic-nav-item-heading',0)->plaintext);
-            foreach ($html->find('div.video-info div.video-overview h3.video-title-container a.yt-uix-sessionlink') as $key=>$elm){
-                $vid_title = $html->find('span.title',$key)->plaintext;
-                $data['vdo_script'] .= $vid_title."<br> http://www.youtube.com".$elm->href." ";
-            }
+            $data['title'] = trim($html->find('#gh-activityfeed > div > div.pl-header-content > div:nth-child(1) > h1',0)->plaintext);
+            // foreach ($html->find('div.video-info div.video-overview h3.video-title-container a.yt-uix-sessionlink') as $key=>$elm){
+                // $vid_title = $html->find('span.title',$key)->plaintext;
+                // $data['vdo_script'] .= $vid_title."<br> http://www.youtube.com".$elm->href." ";
+            // }
+			// echo $data['vdo_script'];
             $data['slug'] = clean_url($data['title']);
             $data['created'] = time();
             $data['url'] = $link;
             $data['type'] = 'music core';
 			$data['status'] = 'approve';
-            $data['thumb_1'] = $html->find(".playlist-video-item span.yt-thumb-clip img",1)->src;
-            $data['thumb_2'] = $html->find(".playlist-video-item span.yt-thumb-clip img",2)->src;
-            $data['thumb_3'] = $html->find(".playlist-video-item span.yt-thumb-clip img",3)->src;
-            $data['thumb_4'] = $html->find(".playlist-video-item span.yt-thumb-clip img",4)->src;
-			$data['thumb_5'] = $html->find(".playlist-video-item span.yt-thumb-clip img",5)->src;
-			$data['thumb_6'] = $html->find(".playlist-video-item span.yt-thumb-clip img",6)->src;
-			$data['thumb_7'] = $html->find(".playlist-video-item span.yt-thumb-clip img",7)->src;
-			$data['thumb_8'] = $html->find(".playlist-video-item span.yt-thumb-clip img",8)->src;
-			$data['thumb_9'] = $html->find(".playlist-video-item span.yt-thumb-clip img",9)->src;
-			$data['thumb_10'] = $html->find(".playlist-video-item span.yt-thumb-clip img",10)->src;
+			for ($x=0; $x<=10; $x++) {
+			    $data['thumb_'.$x] = $html->find("#pl-load-more-destination > tr:nth-child(1) > td.pl-video-thumbnail > a > span > span > span > img",$x)->src;
+			}
 			
 			$orlist = explode(" ", $data['title']);
 			$data['orderlist'] = $orlist[1];
 			
             $db->AutoExecute('concert_categories',$data,'INSERT');
             
-            foreach ($html->find('div.video-info div.video-overview h3.video-title-container a.yt-uix-sessionlink') as $key=>$elm){
+            foreach ($html->find('#pl-load-more-destination > tr:nth-child(1) > td.pl-video-title > a') as $key=>$elm){
                 $data2['concert_category_id'] = $db->GetOne('select max(id) from concert_categories');
-                $data2['title'] = $html->find('span.title',$key)->plaintext;
+                $data2['title'] = trim($html->find('#pl-load-more-destination > tr:nth-child(1) > td.pl-video-title > a',$key)->plaintext);
                 $data2['slug'] = clean_url($data2['title']);
                 $data2['vdo_script'] = "http://www.youtube.com".$elm->href;
                 $data2['url'] = $data2['vdo_script'];

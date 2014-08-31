@@ -19,8 +19,8 @@ $links = get_link();
 if($links)
 {
 	foreach ($links as $key => $link){
-            $url = $link;
-			$html = file_get_html($link);
+            $url = "$link";
+			$html = file_get_html($url);
 			$data['title'] = trim($html->find('h1.entry-title',0)->plaintext);
 			$data['slug'] = clean_url($data['title']);
             $data['webboard_category_id'] = 12;
@@ -33,12 +33,11 @@ if($links)
 			$data['created'] = time();
             $data['user_id'] = 1610;
             $data['status'] = 'approve';
-		    $data['url'] = $link;
+		    $data['url'] = $url;
             $data['ip'] = $_SERVER['REMOTE_ADDR'];
             $data['stick'] = 0;
             $data['group_id'] = 0;
             $data['author'] = "Memories";
-            $data['url'] = $link;
 			$db->AutoExecute('webboard_quizs',$data,'INSERT');
 			print "<br>".++$key." $link insert";
 			unset($html);
@@ -63,6 +62,7 @@ function get_link()
             // $slug = clean_url($data->plaintext);
             $url = $data->href;
             $check = $db->GetOne('select url from webboard_quizs where url = ?',array($url));
+
              if(!$check)
              {
                  $feed[] =  $data->href;

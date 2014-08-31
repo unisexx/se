@@ -7,7 +7,10 @@
                 <tr>
                     <td><span class="blueranking"><?=$music_chart->no?></span></td>
                     <td>
-                        <a href="music_charts/watch/<?=$chart_category->slug?>/no<?=$music_chart->no?>/<?=$music_chart->slug?>/<?=$music_chart->id?>" target="_blank"><?php echo thumb($music_chart->cover,30,30,1,'alt="'.$music_chart->artist.' - '.$music_chart->m_title.'" style="float: left; margin-right: 10px;"')?></a>
+                        <a href="music_charts/watch/<?=$chart_category->slug?>/no<?=$music_chart->no?>/<?=$music_chart->slug?>/<?=$music_chart->id?>" target="_blank">
+                        	<?// php echo thumb($music_chart->cover,30,30,1,'alt="'.$music_chart->artist.' - '.$music_chart->m_title.'" style="float: left; margin-right: 10px;"')?>
+                        	<img src="http://img.youtube.com/vi/<?=getYouTubeIdFromURL($music_chart->vdo_url)?>/default.jpg" style='float: left; margin-right: 10px; width:50px;'>
+                        	</a>
                         <a href="music_charts/watch/<?=$chart_category->slug?>/no<?=$music_chart->no?>/<?=$music_chart->slug?>/<?=$music_chart->id?>" target="_blank"><?=$music_chart->artist?> - <?=$music_chart->m_title?></a>
                         <br clear="all">
                     </td>

@@ -16,7 +16,10 @@
         <tr>
             <td><span class="blueranking left20"><?=$music_chart->no?></span></td>
             <td>
-                <a href="music_charts/watch/<?=$chart_category->slug?>/no<?=$music_chart->no?>/<?=$music_chart->slug?>/<?=$music_chart->id?>" target="_blank"><?php echo thumb($music_chart->cover,50,50,1,'style="float: left; margin-right: 10px;"')?></a>
+                <a href="music_charts/watch/<?=$chart_category->slug?>/no<?=$music_chart->no?>/<?=$music_chart->slug?>/<?=$music_chart->id?>" target="_blank">
+                	<?//php/echo thumb($music_chart->cover,50,50,1,'style="float: left; margin-right: 10px;"')?>
+                	<img src="http://img.youtube.com/vi/<?=getYouTubeIdFromURL($music_chart->vdo_url)?>/default.jpg" style='float: left; margin-right: 10px; height:50px;'>
+                </a>
                 <a href="music_charts/watch/<?=$chart_category->slug?>/no<?=$music_chart->no?>/<?=$music_chart->slug?>/<?=$music_chart->id?>" target="_blank"><b><?=$music_chart->artist?></b><br><?=$music_chart->m_title?></a>
                 <br clear="all">
             </td>

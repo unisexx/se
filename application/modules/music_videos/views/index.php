@@ -13,7 +13,8 @@
                     <span class="video-thumb-container">
                         <span class="wrap">
                             <span class="shim"></span>
-                            <?=YoutubeIframeConverter($mv->video_script,"thumb")?>
+                            <?// =YoutubeIframeConverter($mv->video_script,"thumb")?>
+                            <img src="http://img.youtube.com/vi/<?=getYouTubeIdFromURL($mv->url)?>/default.jpg">
                         </span>
                         <span class="play">Play</span>
                     </span>
