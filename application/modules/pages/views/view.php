@@ -8,4 +8,3 @@
     <div class="newcontent">
         <?=$page->detail?>
     </div>
-<?=disqus_comment();?>
