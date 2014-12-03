@@ -23,7 +23,7 @@
                 <li><a rel="tooltip" data-placement="bottom" href="users/account_setting" data-original-title="แก้ไขข้อมูล"><?php echo user_login()->username ?></a></li>
                 <li><a href="users/logout" rel="tooltip" data-placement="bottom" data-original-title="ออกจากระบบ">logout</a></li>
             <?php else:?>
-                <li><a href="users/register"> สมัครสมาชิก</a></li>
+                <li><a href="users/register">สมัครสมาชิก</a></li>
                 <li><a data-toggle="modal" href='#signin'>ล็อกอิน</a></li>
                 <li><img src="themes/front/images/facebook-login-button.png" alt="ล็อกอินผ่านทางเฟสบุค" onclick="Login()" style="margin-top: 8px;"></li>
             <?php endif;?>
@@ -38,7 +38,7 @@
 <div class="container header-blk">
 	<div class="row">
 		<div class="alert alert-block span12" style="background-color:#fff;border:2px dotted red; padding-top:0px;padding-bottom:0px;">
-            <a href="http://www.line2me.in.th/sticker" target="_blank" style="color:#000; text-shadow: 0 0 0.2em #8F7"><h3 style="text-align: center; background: yellow;">สนใจฝากซื้อสติ๊กเกอร์ไลน์ของแท้โดยทีมงาน kpoplover คลิกเลยจ้า</h3></a>
+            <a href="http://www.sticker.line2me.in.th" target="_blank" style="color:#000; text-shadow: 0 0 0.2em #8F7"><h3 style="text-align: center; background: yellow;">สนใจฝากซื้อสติ๊กเกอร์ไลน์ของแท้โดยทีมงาน kpoplover คลิกเลยจ้า</h3></a>
         </div>
 		<!--
 	    <?php $random = rand(1,2);?>
