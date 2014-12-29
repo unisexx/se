@@ -509,18 +509,18 @@ $(document).ready(function(){
 	$('[rel=popover]').popover();
 	
 	// fb-traffic-pop
-	$().facebookTrafficPop({
-	    'timeout':'30', 
-	    'title':'มาเป็นแฟนกันนะคะ ^-^',
-	    'message':'<h2 style="font-size:30px;">ชอบติดตามข่าวสาร ฟังเพลง ดูซีรีย์ กดไลค์เลยจ้า (กดไลค์อีกรอบก็จะไม่แสดงอีกต่อไปค่ะ)<h2>',
-	    'url':'https://www.facebook.com/pages/kpoplover/379223069327',
-	    'lang':'en',
-	    'wait':'120',
-	    'opacity':'0.80',
-	    'closeable':true,
-	    'advancedClose':true,
-	    'showfaces':true
-    });
+	// $().facebookTrafficPop({
+	    // 'timeout':'30', 
+	    // 'title':'มาเป็นแฟนกันนะคะ ^-^',
+	    // 'message':'<h2 style="font-size:30px;">ชอบติดตามข่าวสาร ฟังเพลง ดูซีรีย์ กดไลค์เลยจ้า (กดไลค์อีกรอบก็จะไม่แสดงอีกต่อไปค่ะ)<h2>',
+	    // 'url':'https://www.facebook.com/pages/kpoplover/379223069327',
+	    // 'lang':'en',
+	    // 'wait':'120',
+	    // 'opacity':'0.80',
+	    // 'closeable':true,
+	    // 'advancedClose':true,
+	    // 'showfaces':true
+    // });
             
 	
 	// set thumbnail equal height
