@@ -20,10 +20,11 @@ if($max_id == $last_id){
     $current = $db->GetRow("select * from newsletters_email_lists where id = (SELECT min(id) AS id FROM newsletters_email_lists WHERE id > ".$last_id." and status='approve')");
 }
 
-send_mail($current['email'],$mail['title'],$mail['detail']);
-
 $db->Execute("UPDATE newsletters_email_lists SET current='this' WHERE id = ".$current['id']);
 $db->Execute("UPDATE newsletters_email_lists SET current='' WHERE id <> ".$current['id']);
+
+// echo "ส่งเมล์ไปที่ ".$current['email'];
+send_mail($current['email'],$mail['title'],$mail['detail']);
 
 function send_mail($email,$subject,$message){
     // ###### PHPMailer #### 

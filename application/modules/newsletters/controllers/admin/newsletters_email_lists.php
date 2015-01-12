@@ -96,8 +96,8 @@ class Newsletters_email_lists extends Admin_Controller
 			
 			  if ($res) {
 			    foreach(array_unique($matches[0]) as $email) {
-                  //$this->output->set_output($email);
-					echo @$email;
+                  $this->output->set_output(@$email);
+				  // echo @$email;
 			    }
 			  }
 			  else {

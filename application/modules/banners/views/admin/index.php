@@ -9,6 +9,7 @@
         <th>หมดอายุ</th>
         <th>รูปภาพ</th>
         <th>url</th>
+        <th>อีเมล์</th>
         <th width="90">
             <?php if(permission('hilights', 'create')):?>
             <a class="btn" href="banners/admin/banners/form">เพิ่มรายการ</a>
@@ -26,6 +27,7 @@
         <td><?php echo DB2Date($banner->end_date)?></td>
         <td><?=thumb($banner->image,false,60,1)?></td>
         <td><?php echo $banner->url;?></td>
+        <td><?=$banner->email?></td>
         <td>
             <?php if(permission('hilights', 'update')):?>
             <a class="btn" href="banners/admin/banners/form/<?php echo $banner->id?>" >แก้ไข</a> 

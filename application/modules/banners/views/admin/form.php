@@ -57,6 +57,10 @@ $(function(){
     </tr>
     <tr><th>เริ่ม :</th><td><input type="text" name="start_date" value="<?php echo DB2Date(($banner->start_date)?$banner->start_date:date("Y-m-d"))?>" class="datepicker" /></td></tr>
     <tr><th>สิ้นสุด :</th><td><input type="text" name="end_date" value="<?php echo DB2Date($banner->end_date)?>" class="datepicker" /></td></tr>
+    <tr>
+        <th>Email :</th>
+        <td><input type="text" name="email" value="<?=$banner->email?>"></td>
+    </tr>
     <tr><th></th><td><input type="submit" value="บันทึก" /><?php echo form_back() ?></td></tr>
 </table>
 <?php echo form_referer() ?>
