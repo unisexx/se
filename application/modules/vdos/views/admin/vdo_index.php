@@ -22,7 +22,7 @@
 	<tr id="gallery-list" <?php echo cycle()?>>
 		<td><input type="text" name="orderlist[]" size="1" value="<?=($vdo->orderlist == 0)?$vdo->id:$vdo->orderlist;?>"><input type="hidden" name="orderid[]" value="<?php echo $vdo->id ?>"></td>
 		<td><?php echo $vdo->title?></td>
-		<td><a href="http://www.kodhit.com<?php echo $vdo->url?>" target="_blank"><?php echo $vdo->url?></a></td>
+		<td><a href="<?php echo $vdo->url?>" target="_blank"><?php echo $vdo->url?></a></td>
 		<td>
 			<?php if(permission('vdos', 'update')):?>
 			<a class="btn" href="vdos/admin/vdos/form/<?php echo $vdos->category->id?>/<?php echo $vdo->id?>">แก้ไข</a> 

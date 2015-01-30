@@ -11,15 +11,16 @@ $db->Execute('SET collation_connection=utf8_unicode_ci');
 $db->Execute('SET NAMES utf8');
 // $db->debug = true;
 
-$mails = $db->GetArray("select * from banners WHERE datediff(end_date, now()) = 7 or datediff(end_date, now()) = 3 or datediff(end_date, now()) = 1");
+$mails = $db->GetArray("select * from banners WHERE datediff(end_date, now()) = 7 or datediff(end_date, now()) = 3 or datediff(end_date, now()) = 0");
 
-// print_r($mails);
+print_r($mails);
 
 foreach($mails as $row){
 	if($row['email'] != ""){
 		$email = $row['email'];
 		$title = "แจ้งเตือนแบนเนอร์หมดอายุครับ (kpoplover.com)";
 		$detail ='
+		(เมล์ฉบับนี้เป็นระบบแจ้งอัตโนมัติ)<br><br>
 		สวัสดีครับ ร้านค้า <br> '.$row['url'].'<br><br>
 		
 		แบนเนอร์ของคุณจะหมดอายุในวันที่  '.DB2Date($row['end_date']).'<br>
@@ -80,6 +81,7 @@ foreach($mails as $row){
 		';
 		
 		send_mail($email,$title,$detail);
+		echo "ส่งอีเมล์แจ้งเตือนไปยัง ".$email." สำเร็จ<br>";
 	}
 }
 

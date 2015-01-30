@@ -11,7 +11,7 @@ $db->Execute('SET character_set_results=utf8');
 $db->Execute('SET collation_connection=utf8_unicode_ci');
 $db->Execute('SET NAMES utf8');
 
-//print_r(get_link());
+// print_r(get_link());
 $links = get_link();
 if($links)
 {

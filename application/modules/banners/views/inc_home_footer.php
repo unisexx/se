@@ -8,7 +8,7 @@
     <?php foreach($banner125 as $b125):?>
         <a href="<?=$b125->url?>" target="_blank"><img src="<?=$b125->image?>" alt="<?php echo $b125->title?>" width="<?=$b125->width?>" height="<?=$b125->height?>" class="foot-banner"></a>
     <?php endforeach;?>
-    <iframe class="pull-left" src="http://bit.ly/nungyer" width="120" height="120" scrolling="no" frameBorder="0" style="margin-top: 8px;"></iframe>
+    <a href="tickers/view/2"><div class="pull-left banner125">โฆษณาตำแหน่งนี้ 200/เดือน<br>125px x 125px คลิก</div></a>
     <a href="tickers/view/2"><div class="pull-left banner125">โฆษณาตำแหน่งนี้ 200/เดือน<br>125px x 125px คลิก</div></a>
     <a href="tickers/view/2"><div class="pull-left banner125">โฆษณาตำแหน่งนี้ 200/เดือน<br>125px x 125px คลิก</div></a>
     <a href="tickers/view/2"><div class="pull-left banner125">โฆษณาตำแหน่งนี้ 200/เดือน<br>125px x 125px คลิก</div></a>

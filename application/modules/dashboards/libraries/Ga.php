@@ -214,6 +214,10 @@ class Ga{
                         'sort'			=> '-ga:visits');
         return $this->genReport($params);
     }
+	
+	// function test(){
+		// print_r($params);
+	// }
 
     //----------------END READY MADE------------------
 }
