@@ -19,7 +19,7 @@ class Home extends Public_Controller {
 	
 	function index(){
 		$this->template->build('index');
-        //$this->output->cache(5);
+        // $this->output->cache(10);
 	}
 	
 	function intro(){

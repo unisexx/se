@@ -9,6 +9,7 @@ $db->Connect($_config['server'],$_config['username'],$_config['password'],$_conf
 $db->Execute('SET character_set_results=utf8');
 $db->Execute('SET collation_connection=utf8_unicode_ci');
 $db->Execute('SET NAMES utf8');
+//$db->debug = true;
 
 $mail = $db->GetRow("select * from newsletters where id = 1");
 $max_id = $db->GetOne('select max(id) from newsletters_email_lists where status="approve"');

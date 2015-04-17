@@ -10,8 +10,8 @@
     <?php endforeach;?>
     <a href="tickers/view/2"><div class="pull-left banner125">โฆษณาตำแหน่งนี้ 200/เดือน<br>125px x 125px คลิก</div></a>
     <a href="tickers/view/2"><div class="pull-left banner125">โฆษณาตำแหน่งนี้ 200/เดือน<br>125px x 125px คลิก</div></a>
-    <a href="tickers/view/2"><div class="pull-left banner125">โฆษณาตำแหน่งนี้ 200/เดือน<br>125px x 125px คลิก</div></a>
-    <a href="tickers/view/2"><div class="pull-left banner125">โฆษณาตำแหน่งนี้ 200/เดือน<br>125px x 125px คลิก</div></a>
+    <!-- <a href="tickers/view/2"><div class="pull-left banner125">โฆษณาตำแหน่งนี้ 200/เดือน<br>125px x 125px คลิก</div></a> -->
+    <!-- <a href="tickers/view/2"><div class="pull-left banner125">โฆษณาตำแหน่งนี้ 200/เดือน<br>125px x 125px คลิก</div></a> -->
     <!-- <div class="row">
     <div class="span9">
     <a href="tickers/view/2"><div class="pull-left banner125">โฆษณาตำแหน่งนี้ 200/เดือน<br>125px x 125px คลิก</div></a>

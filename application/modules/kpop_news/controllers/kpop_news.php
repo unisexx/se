@@ -30,7 +30,7 @@ Class Kpop_news extends Public_Controller
             meta_description(word_limiter(strip_tags($data['new']->detail),10));
             $this->template->build('view',$data);
             
-            //$this->output->cache(60);
+            $this->output->cache(10);
         }
         
         function inc_home(){
