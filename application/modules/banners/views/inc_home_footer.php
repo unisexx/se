@@ -9,7 +9,7 @@
         <a href="<?=$b125->url?>" target="_blank"><img src="<?=$b125->image?>" alt="<?php echo $b125->title?>" width="<?=$b125->width?>" height="<?=$b125->height?>" class="foot-banner"></a>
     <?php endforeach;?>
     <a href="tickers/view/2"><div class="pull-left banner125">โฆษณาตำแหน่งนี้ 200/เดือน<br>125px x 125px คลิก</div></a>
-    <a href="tickers/view/2"><div class="pull-left banner125">โฆษณาตำแหน่งนี้ 200/เดือน<br>125px x 125px คลิก</div></a>
+    <!-- <a href="tickers/view/2"><div class="pull-left banner125">โฆษณาตำแหน่งนี้ 200/เดือน<br>125px x 125px คลิก</div></a> -->
     <!-- <a href="tickers/view/2"><div class="pull-left banner125">โฆษณาตำแหน่งนี้ 200/เดือน<br>125px x 125px คลิก</div></a> -->
     <!-- <a href="tickers/view/2"><div class="pull-left banner125">โฆษณาตำแหน่งนี้ 200/เดือน<br>125px x 125px คลิก</div></a> -->
     <!-- <div class="row">
