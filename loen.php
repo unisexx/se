@@ -37,11 +37,11 @@ if($links)
 	if(!empty($result)){
 		foreach ($result as $key => $url){
 			$data['youtubeid'] = getYouTubeIdFromURL($url);
-			$json_output = file_get_html("http://gdata.youtube.com/feeds/api/videos/".$data['youtubeid']."?v=2&alt=json");
-			$json = json_decode($json_output, true);
+			$content = file_get_contents("http://youtube.com/get_video_info?video_id=".$data['youtubeid']);
+			parse_str($content, $youtube_title);
 			
 			//This gives you the video title
-			$data['title'] = $json['entry']['title']['$t'];
+			$data['title'] = $youtube_title['title'];
 
 			$data['url'] = "http://www.youtube.com/watch?v=".$data['youtubeid'];
 	        $data['slug'] = clean_url($data['title']);
@@ -51,7 +51,7 @@ if($links)
 	        $data['status'] = 'approve';
 	        $data['chanel'] = 'loen';
 	        $db->AutoExecute('mvs',$data,'INSERT');
-	        print "<br>".++$key." $url insert";
+	        // print "<br>".++$key." $url insert";
 	        unset($html);
 	        unset($data);
 		}
