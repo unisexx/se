@@ -30,7 +30,7 @@ if($links)
         $data['slug'] = clean_url($data['title']);
         $data['created'] = time();
         $data['source'] = 'tlc';
-		$data['status'] = 'approve';
+		$data['status'] = 'draft';
         $db->AutoExecute('kpop_news',$data,'INSERT');
         print "<br>".++$key." $url/news/$link insert";
         unset($html);

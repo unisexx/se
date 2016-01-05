@@ -25,7 +25,7 @@ if($links)
         $data['slug'] = $html->find('div.single-title-again h2 a',0)->plaintext;
         $data['slug'] = clean_url($data['slug']);
         $data['created'] = time();
-        $data['status'] = 'approve';
+        $data['status'] = 'draft';
         $db->AutoExecute('mvs',$data,'INSERT');
         print "<br>".++$key." $link insert";
         unset($html);

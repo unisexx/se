@@ -50,8 +50,8 @@ if($links)
 	        $data['created'] = time();
 	        $data['status'] = 'approve';
 	        $data['chanel'] = 'cjenm';
-	        $db->AutoExecute('mvs',$data,'INSERT');
-	        print "<br>".++$key." $url insert";
+	        // $db->AutoExecute('mvs',$data,'INSERT');
+	        // print "<br>".++$key." $url insert";
 	        unset($html);
 	        unset($data);
 			// exit;
