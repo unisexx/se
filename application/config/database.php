@@ -38,7 +38,7 @@
 | the active record class
 */
 
-$active_group = 'default';
+$active_group = 'host';
 $active_record = TRUE;
 
 
@@ -57,6 +57,22 @@ $db['default']['dbcollat'] = 'utf8_general_ci';
 $db['default']['swap_pre'] = '';
 $db['default']['autoinit'] = TRUE;
 $db['default']['stricton'] = FALSE;
+
+$db['host']['hostname'] = 'localhost';
+$db['host']['username'] = 'addfrien_kpop';
+$db['host']['password'] = 'RZSAQiJme9';
+$db['host']['database'] = 'addfrien_kpop';
+$db['host']['dbdriver'] = 'mysql';
+$db['host']['dbprefix'] = '';
+$db['host']['pconnect'] = TRUE;
+$db['host']['db_debug'] = TRUE;
+$db['host']['cache_on'] = FALSE;
+$db['host']['cachedir'] = '';
+$db['host']['char_set'] = 'utf8';
+$db['host']['dbcollat'] = 'utf8_general_ci';
+$db['host']['swap_pre'] = '';
+$db['host']['autoinit'] = TRUE;
+$db['host']['stricton'] = FALSE;
 
 
 /* End of file database.php */
