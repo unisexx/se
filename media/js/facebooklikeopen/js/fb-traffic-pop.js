@@ -68,7 +68,7 @@
 			   markup. Then, prepend the popup to the body */
 			getPopHTML = function() {
 				
-				var tPop = '<div id="fblikebg"></div><div id="fblikepop"><div id="popup_head"><div id="closeable"></div><h1>'+defaults.title+'</h1></div><div id="popupMessage">'+defaults.message+'</div><div id="buttonArea"><div id="actionHolder"><fb:like id="fbLikeButton" href="'+defaults.url+'" show_faces="'+defaults.showfaces+'" width="450"></fb:like></div><div id="counter-display">'+tstrings.orwait[defaults.lang]+' <span id="counter"> </span>  '+tstrings.seconds[defaults.lang]+'.</div> <div style="clear:both"></div></div></div></div>'
+				var tPop = '<div id="fblikebg"></div><div id="fblikepop"><div id="popup_head"><div id="closeable"></div><h1>'+defaults.title+'</h1></div><div id="popupMessage">'+defaults.message+'</div><div id="buttonArea"><div id="actionHolder"><div id="fbLikeButton" class="fb-page" data-href="'+defaults.url+'" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"></div></div><div id="counter-display">'+tstrings.orwait[defaults.lang]+' <span id="counter"> </span>  '+tstrings.seconds[defaults.lang]+'.</div> <div style="clear:both"></div></div></div></div>'
 							
 				// Return the pop up markup
 				return tPop;
