@@ -92,7 +92,7 @@ class Vdos extends Admin_Controller{
 	
 	function uncategory(){
 		$data['vdos'] = new Vdo();
-		$data['vdos']->where('category_id IS NULL')->order_by('id','asc')->get_page();
+		$data['vdos']->where('category_id IS NULL')->order_by('id','desc')->get_page();
 		$this->template->build('admin/uncategory_index',$data);
 	}
 	
