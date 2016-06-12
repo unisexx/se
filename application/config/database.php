@@ -38,14 +38,14 @@
 | the active record class
 */
 
-$active_group = 'host';
+$active_group = 'default';
 $active_record = TRUE;
 
 
 $db['default']['hostname'] = 'localhost';
 $db['default']['username'] = 'root';
 $db['default']['password'] = '';
-$db['default']['database'] = 'kpoplover_se';
+$db['default']['database'] = '[new_backup]kpoplover';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;

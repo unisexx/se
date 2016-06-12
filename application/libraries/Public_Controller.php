@@ -7,7 +7,7 @@ class Public_Controller extends Master_Controller
 		
 		header('Content-type: text/html; charset=UTF-8');
 		$this->template->title('อัพเดทข่าวเกาหลี เพลงเกาหลี ซีรีย์เกาหลีใหม่ล่าสุด - Kpoplover');
-		$this->template->set_theme('front');
+		$this->template->set_theme('front_2016');
     	$this->template->set_layout('layout');
 		
 		// Set js
