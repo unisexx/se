@@ -1,4 +1,5 @@
-<link rel="stylesheet" href="media/bootstrap-3.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
-<!-- <link rel="stylesheet" href="media/font-awesome/css/font-awesome.min.css">
-<link type="text/css" rel="stylesheet" href="media/js/facebooklikeopen/css/fb-traffic-pop.css">  -->
-<link rel="stylesheet" href="themes/front/css/style.css" type="text/css">
+<!-- Bootstrap core CSS -->
+<link href="media/bootstrap-4.0.0-alpha.2/docs/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<link href="media/bootstrap-4.0.0-alpha.2/docs/examples/navbar-top-fixed/navbar-top-fixed.css" rel="stylesheet">

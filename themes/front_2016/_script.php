@@ -1,15 +1,11 @@
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-<script type="text/javascript" src="media/bootstrap/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="media/js/jquery.validate.min.js"></script>
-<script type="text/javascript" src="media/tiny_mce/tiny_mce.js"></script>
-<script type="text/javascript" src="http://connect.facebook.net/en_US/all.js"></script>
-<script type="text/javascript" src="media/js/facebooklikeopen/js/fb-traffic-pop.js"></script>
-<script type="text/javascript" src="themes/front/js/myscript_v2.min.js"></script>
-<!-- <script type="text/javascript" src="themes/front/js/myscript.js"></script> -->
-<div id="fb-root"></div>
-<?php echo js_notify(); ?>
-
-<div id="fbtpdiv"></div> <!-- facebook-traffic-pop.js-Element -->
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="media/bootstrap-4.0.0-alpha.2/docs/assets/js/vendor/jquery.min.js"><\/script>')</script>
+<script src="media/bootstrap-4.0.0-alpha.2/docs/dist/js/bootstrap.min.js"></script>
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="media/bootstrap-4.0.0-alpha.2/docs/assets/js/ie10-viewport-bug-workaround.js"></script>
 
 <script type="text/javascript">
   var _gaq = _gaq || [];
