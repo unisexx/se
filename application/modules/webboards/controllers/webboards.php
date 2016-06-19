@@ -329,7 +329,7 @@ class Webboards extends Public_Controller
         $gallery = new Webboard_quiz();
         $series = new Webboard_quiz();
         $data['alls'] = $all->where("webboard_category_id <> 11 and webboard_category_id <> 12 and webboard_category_id <> 14 and webboard_category_id <> 16 and status ='approve'")->order_by('id','desc')->limit(5)->get();
-		$data['musics'] = $music->where("webboard_category_id = 12 and status ='approve'")->order_by('id','desc')->limit(15)->get();
+		$data['musics'] = $music->where("webboard_category_id = 12 and status ='approve'")->order_by('id','desc')->limit(6)->get();
         $data['galleries'] = $gallery->where("webboard_category_id = 16 and status ='approve'")->order_by('id','random')->limit(8)->get();
         $data['series'] = $series->where("webboard_category_id = 14 and status ='approve'")->order_by('id','desc')->limit(5)->get();
 		$this->load->view('inc_home',$data);

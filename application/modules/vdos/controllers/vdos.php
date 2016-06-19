@@ -20,6 +20,12 @@ Class Vdos extends Public_Controller
             $data['categories'] = $category->select("categories.name,categories.end,categories.id,categories.slug,categories.image,(SELECT MAX(vdos.id) from vdos where category_id = categories.id)as vdoid")->where("module = 'vdos' and status = 'approve'")->order_by('vdoid','desc')->get_page(6);
 			$this->load->view('inc_home',$data);
 		}
+		
+		function inc_home2(){
+            $vdo = new Vdo();
+            $data['vdos'] = $vdo->where_related("category","status = 'approve'")->order_by('id','desc')->limit(10)->get();
+            $this->load->view('inc_home2',$data);
+        }
         
         function view($slug){
             $data['category'] = new Category();

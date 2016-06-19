@@ -3,3 +3,6 @@
 
 <!-- Custom styles for this template -->
 <link href="media/bootstrap-4.0.0-alpha.2/docs/examples/navbar-top-fixed/navbar-top-fixed.css" rel="stylesheet">
+
+<!-- Kpoplover Style -->
+<link href="themes/front_2016/css/style.css" rel="stylesheet">

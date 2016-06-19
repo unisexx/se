@@ -1,4 +1,5 @@
 <nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
+<div class="container">
   <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2">
     &#9776;
   </button>
@@ -28,4 +29,5 @@
       </li>
     </ul>
   </div>
+</div>
 </nav>

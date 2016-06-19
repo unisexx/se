@@ -1,4 +1,16 @@
-<div class="webboard_inchome">
+<h2 class="headline">เพลงเกาหลี</h2>
+<div class="row">
+	<?php foreach($musics as $music):?>
+		<div class="col-lg-2">
+			<a href="webboards/view_topic/<?=$music->slug?>/<?=$music->id?>" target="_blank">
+			  <?=get_img_from_detail($music->detail,100,100,1,'alt="'.$music->title.'"')?>
+		      <h3><?=$music->title?></h3>
+		    </a>
+	    </div><!--/span-->
+	<?php endforeach;?>
+</div><!--/row-->
+
+<!-- <div class="webboard_inchome">
     <div class="span9">
     <h2 class="header">เพลงเกาหลี</h2>
         <div class="row board-music">
@@ -35,7 +47,7 @@
         <a href="webboards/category/gallery"><div class="right btn btn-mini" type="button">ดูแกลอรี่ภาพทั้งหมด</div></a>
         </div>
     </div>
-</div>
+</div> -->
 <!-- <br clear="all">
 <div class="webboard_inchome">
 

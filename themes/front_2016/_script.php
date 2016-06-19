@@ -19,9 +19,8 @@
   })();
 </script>
 
-<!-- <div id="status">
-    <div onclick="Login()"/>login</div>
-</div>
-<div id="message">
-Events:<br/>
-</div> -->
+<script>
+$(document).ready(function(){
+	$('.newcontent iframe').removeAttr('width').removeAttr('height').addClass('embed-responsive-item').wrap('<div class="embed-responsive embed-responsive-16by9"></div>');
+});
+</script>

@@ -1,8 +1,11 @@
-<ul class="breadcrumb">
-    <li><a href="home">หน้าแรก</a> <span class="divider">/</span></li>
-    <li><a href="ข่าวเกาหลี">ข่าวบันเทิงเกาหลีอัพเดท</a> <span class="divider">/</span></li>
-    <li class="active"><?=$new->title?></li>
-</ul>
+<div class="row">
+	
+<ol class="breadcrumb" style="margin-bottom: 5px;">
+  <li><a href="">หน้าแรก</a></li>
+  <li><a href="ข่าวเกาหลี">ข่าวบันเทิงเกาหลีอัพเดท</a></li>
+  <li class="active"><?=$new->title?></li>
+</ol>
+
 <h1><?=$new->title?></h1>
 <?=addThis()?>
     <div class="newcontent">
@@ -12,12 +15,20 @@
 <?=fanpage_button();?>
 <?=facebook_comment();?>
 <h2>ข่าวบันเทิงเกาหลีอื่นๆที่น่าสนใจ</h2>
+
+<div class="row">
 <?php foreach($ralates as $row):?>
-    <div class="span4">
-        <blockquote>
-        <a class="pull-left" href="ข่าวเกาหลี/<?=$row->slug?>" style="margin-right:5px;"><?=get_img_from_detail($row->detail,40,40,1)?></a>
-        <a href="ข่าวเกาหลี/<?=$row->slug?>"><?=$row->title?></a>
-        </blockquote>
-    </div>
-    <?php echo alternator('','<br clear="all">');?>
+<div class="col-lg-6">
+	<div class="media">
+	  <a class="media-left" href="ข่าวเกาหลี/<?=$row->slug?>">
+	    <?=get_img_from_detail($row->detail,120,90,1,'alt="'.$row->title.'"')?>
+	  </a>
+	  <div class="media-body">
+	    <h4 class="media-heading"><?=$row->title?></h4>
+	  </div>
+	</div>
+</div>
 <?php endforeach;?>
+</div>
+
+</div>

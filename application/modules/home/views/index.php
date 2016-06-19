@@ -5,11 +5,11 @@
     <div class="homepage">
         <?php //echo modules::run('chat/inc_home'); ?>
     	<?php //echo modules::run('hilights/inc_home'); ?>
-        <?php echo modules::run('tickers/inc_home'); ?>
-        <?php echo modules::run('kpop_news/inc_home'); ?>
-        <?php echo modules::run('webboards/inc_home'); ?>
-        <?php echo modules::run('music_videos/inc_home'); ?>
-        <?php echo modules::run('concerts/inc_home'); ?>
-        <?php echo modules::run('vdos/inc_home'); ?>
+        <?php // echo modules::run('tickers/inc_home'); ?>
+        <section id="kpop_new"><?php echo modules::run('kpop_news/inc_home'); ?></section>
+        <section id="music"><?php echo modules::run('webboards/inc_home'); ?></section>
+        <section id="mv"><?php echo modules::run('music_videos/inc_home'); ?></section>
+        <?php // echo modules::run('concerts/inc_home'); ?>
+        <section id="series"><?php echo modules::run('vdos/inc_home2'); ?></section>
     </div>
-  </div>
+  </div> 

@@ -8,7 +8,7 @@ Class Kpop_news extends Public_Controller
         
         function index(){
             $data['news'] = new Kpop_new();
-            $data['news']->where("status = 'approve'")->order_by('id','desc')->get_page(10);
+            $data['news']->where("status = 'approve'")->order_by('id','desc')->get_page(20);
             $this->template->title('ข่าวเกาหลีอัพเดทล่าสุด - Kpoplover');
             $this->template->build('index',$data);
 			//$this->output->cache(5);
@@ -34,11 +34,8 @@ Class Kpop_news extends Public_Controller
         }
         
         function inc_home(){
-            $data['newsHead'] = new Kpop_new();
-            $data['newsHead']->where("status = 'approve'")->order_by('id','desc')->get_page(1);
-            
             $data['news'] = new Kpop_new();
-            $data['news']->where("status = 'approve'")->order_by('id','desc')->limit(6,1)->get();
+            $data['news']->where("status = 'approve'")->order_by('id','desc')->limit(6)->get();
             $this->load->view('inc_home',$data);
         }
     }

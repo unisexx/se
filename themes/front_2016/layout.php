@@ -23,15 +23,13 @@
 <body>
 	<? include "_header.php";?>
     <div class="container">
-        <div class="row">
             <div class="col-sm-9">
                 <?php echo $template["body"] ?>
-                <?php echo modules::run('banners/inc_home_footer');?>
+                <?php // echo modules::run('banners/inc_home_footer');?>
             </div>
             <div class="col-sm-3">
-                <?include "_sidebar.php";?>
+                <?// include "_sidebar.php";?>
             </div>
-        </div>
     </div>
     <? include "_footer.php";?>
     <? include "_script.php";?>
