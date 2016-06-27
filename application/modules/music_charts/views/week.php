@@ -1,8 +1,11 @@
-<ul class="breadcrumb">
-    <li><a href="home">หน้าแรก</a> <span class="divider">/</span></li>
-    <li><a href="music_charts">K-pop Chart</a> <span class="divider">/</span></li>
-    <li class="active"><?=$chart_category->title?></li>
-</ul>
+<div class="row">
+
+<ol class="breadcrumb">
+  <li><a href="home">หน้าแรก</a></li>
+  <li><a href="music_charts">K-pop Chart</a></li>
+  <li class="active"><?=$chart_category->title?></li>
+</ol>
+
 <h1><?=$chart_category->title?></h1>
 <?=addThis()?>
 <link rel="image_src" href="<?php echo $music_charts->cover?>">
@@ -29,3 +32,5 @@
 </table>
 <?=fanpage_button();?>
 <?=facebook_comment();?>
+
+</div>

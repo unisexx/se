@@ -1,7 +1,7 @@
 <div class="row">
 
 <ol class="breadcrumb">
-  <li><a href="home">Home</a></li>
+  <li><a href="home">หน้าแรก</a></li>
   <li class="active">ข่าวบันเทิงเกาหลีอัพเดท</li>
 </ol>
 

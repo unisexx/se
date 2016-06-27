@@ -1,32 +1,27 @@
-<ul class="breadcrumb">
-    <li><a href="home">หน้าแรก</a> <span class="divider">/</span></li>
-    <li class="active">มิวสิควีดีโอเพลงเกาหลี</li>
-</ul>
-<h1>มิวสิควีดีโอเพลงเกาหลี</h1>
 <div class="row">
-    <?php foreach($mvs as $mv):?>
-        <div class="span4">
-        <div class="clearfix">
-        <div class="video-thumb">
-            <a href="มิวสิควีดีโอเพลงเกาหลี/<?=$mv->slug?>" target="_blank">
-                <div class="thumbnail video">
-                    <span class="video-thumb-container">
-                        <span class="wrap">
-                            <span class="shim"></span>
-                            <?// =YoutubeIframeConverter($mv->video_script,"thumb")?>
-                            <img src="http://img.youtube.com/vi/<?=getYouTubeIdFromURL($mv->url)?>/mqdefault.jpg">
-                        </span>
-                        <span class="play">Play</span>
-                    </span>
-                </div>
-            </a>
-        </div>
-        <a href="มิวสิควีดีโอเพลงเกาหลี/<?=$mv->slug?>" target="_blank"><?=$mv->title?></a> <?=(datediff(datetime2date($mv->created)) >= -1)?'<span class="label label-mini label-warning">ใหม่</span>':'';?>
-        <div class="author"></div>
-        <div class="viewcount"></div>
-        </div>
-        </div>
-        <?php echo alternator('','<br clear="all">');?>
-    <?php endforeach;?>
+
+<ol class="breadcrumb">
+  <li><a href="home">หน้าแรก</a></li>
+  <li class="active">มิวสิควีดีโอเพลงเกาหลี</li>
+</ol>
+
+<h1>มิวสิควีดีโอเพลงเกาหลี</h1>
+
+<div class="row">
+<?php foreach($mvs as $mv):?>
+<div class="col-lg-6">
+<div class="media">
+  <a class="media-left" href="มิวสิควีดีโอเพลงเกาหลี/<?=$mv->slug?>" target="_blank">
+    <img src="http://img.youtube.com/vi/<?=getYouTubeIdFromURL($mv->url)?>/default.jpg">
+  </a>
+  <div class="media-body">
+    <h4 class="media-heading"><?=$mv->title?></h4>
+  </div>
 </div>
-<?=$mvs->pagination()?>
+</div>
+<?php endforeach;?>
+</div><!--/row-->
+
+<?php echo $mvs->pagination();?>
+
+</div>
