@@ -13,7 +13,7 @@
         <link rel="image_src" href="http://img.youtube.com/vi/<?=getYouTubeIdFromURL($music_chart->vdo_url)?>/0.jpg">
         <?php echo get_vdo($music_chart->vdo_url)?>
     </div>
-<?=fanpage_button();?>
+<?//=fanpage_button();?>
 <?=facebook_comment();?>
 
 </div>

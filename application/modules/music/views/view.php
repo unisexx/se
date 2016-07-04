@@ -11,4 +11,6 @@
     <div class="newcontent">
         <?php echo censor(link_filter($webboard_quizs->detail))?>
     </div>
+    
+    <?=facebook_comment();?>
 </div>

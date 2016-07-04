@@ -12,7 +12,7 @@
         <?=get_facebook_thumbnail_from_youtube_iframe($mv->video_script)?>
         <?=preg_replace('#</?a(\s[^>]*)?>#i', '', $mv->detail)?>
     </div>
-<?=fanpage_button();?>
+    
 <?=facebook_comment();?>
 
 </div>

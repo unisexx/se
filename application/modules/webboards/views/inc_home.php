@@ -2,7 +2,7 @@
 <div class="row">
 	<?php foreach($musics as $music):?>
 		<div class="col-lg-2">
-			<a href="webboards/view_topic/<?=$music->slug?>/<?=$music->id?>" target="_blank">
+			<a href="music/view/<?=$music->slug?>/<?=$music->id?>" target="_blank">
 			  <?=get_img_from_detail($music->detail,100,100,1,'alt="'.$music->title.'"')?>
 		      <h3><?=$music->title?></h3>
 		    </a>

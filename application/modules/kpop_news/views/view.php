@@ -12,7 +12,7 @@
         <?=get_facebook_thumbnail($new->detail)?>
         <?=preg_replace('#</?a(\s[^>]*)?>#i', '', $new->detail)?>
     </div>
-<?=fanpage_button();?>
+<?// =fanpage_button();?>
 <?=facebook_comment();?>
 <h2>ข่าวบันเทิงเกาหลีอื่นๆที่น่าสนใจ</h2>
 

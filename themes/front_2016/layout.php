@@ -2,7 +2,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml" xml:lang="th" lang="th" dir="ltr">
 <head>
 	<base href="<?php echo base_url(); ?>" />
-	<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta content='kpoplover' name='author'/>
 	<meta content='kpoplover' name='copyright'/>
 	<meta content='kpoplover' name='Organization-Name'/>
@@ -23,11 +25,11 @@
 <body>
 	<? include "_header.php";?>
     <div class="container">
-            <div class="col-sm-9">
+            <div class="col-sm-8">
                 <?php echo $template["body"] ?>
                 <?php // echo modules::run('banners/inc_home_footer');?>
             </div>
-            <div class="col-sm-3">
+            <div class="col-sm-3 col-sm-offset-1">
                 <?include "_sidebar.php";?>
             </div>
     </div>

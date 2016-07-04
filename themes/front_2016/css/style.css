@@ -26,3 +26,14 @@ h2.headline{
 }
 
 .media{margin-bottom:10px;}
+
+img.side-banner{margin-bottom:10px;}
+
+.bs-footer {
+    padding-top: 40px;
+    padding-bottom: 30px;
+    margin-top: 30px;
+    color: #777;
+    text-align: center;
+    border-top: 1px solid #e5e5e5;
+}

@@ -22,5 +22,5 @@
         <?php endforeach;?>
     </div>
 </div>
-<?=fanpage_button();?>
+<?//=fanpage_button();?>
 <?=facebook_comment();?>

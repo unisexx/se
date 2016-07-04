@@ -47,7 +47,7 @@
 		</table>
 
     </div>
-<?=fanpage_button();?>
+<?//=fanpage_button();?>
 <?=facebook_comment();?>
 
 <?php // echo modules::run('vdos/related_series'); ?>

@@ -3,8 +3,8 @@
   <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2">
     &#9776;
   </button>
+  <a class="navbar-brand" href="">Kpoplover</a>
   <div class="collapse navbar-toggleable-xs" id="exCollapsingNavbar2">
-    <a class="navbar-brand" href="">Kpoplover</a>
     <ul class="nav navbar-nav">
       <li class="nav-item active">
         <a class="nav-link" href="home">Home <span class="sr-only">(current)</span></a>

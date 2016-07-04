@@ -12,7 +12,7 @@
     <div class="newcontent">
         <?=get_vdo($vid->vdo_script)?>
     </div>
-<?=fanpage_button();?>
+<?//=fanpage_button();?>
 <?=facebook_comment();?>
 
 </div>
