@@ -1,3 +1,32 @@
+<div class="row">
+
+<ol class="breadcrumb">
+  <li><a href="home">หน้าแรก</a></li>
+  <li class="active">ซีรีย์เกาหลีซับไทยออนไลน์</li>
+</ol>
+
+<h1>ซีรีย์เกาหลีซับไทยออนไลน์</h1>
+
+<div class="row">
+<?php foreach($categories as $category):?>
+<div class="col-lg-6">
+<div class="media">
+  <a class="media-left" href="vdos/view/<?=$category->slug?>" target="_blank">
+    <?=thumb($category->image,260,180,1,$param = NULL)?>
+  </a>
+  <div class="media-body">
+    <h4 class="media-heading"><?=$category->name?></h4>
+  </div>
+</div>
+</div>
+<?php endforeach;?>
+</div><!--/row-->
+
+<?php echo $categories->pagination();?>
+
+</div>
+
+<!-- 
 <ul class="breadcrumb">
     <li><a href="home">หน้าแรก</a> <span class="divider">/</span></li>
     <li class="active">ซีรีย์เกาหลีซับไทยออนไลน์</li>
@@ -43,4 +72,4 @@
 <?php endforeach;?>
 <br clear="all">
 <?php echo $categories->pagination()?>
-</div>
+</div> -->

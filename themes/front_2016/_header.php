@@ -24,8 +24,11 @@
       <li class="nav-item">
         <a class="nav-link" href="vdos">Series</a>
       </li>
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a class="nav-link" href="webboards">Webboard</a>
+      </li> -->
+       <li class="nav-item">
+        <a class="nav-link" href="music">Music</a>
       </li>
     </ul>
   </div>

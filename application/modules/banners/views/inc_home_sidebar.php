@@ -5,6 +5,6 @@
         <a href="<?=$banner->url?>" target="_blank"><object width="<?=$banner->width?>" height="<?=$banner->height?>" data="<?=$banner->media?>"></object></a>
     <?php endif;?>
 <?php endforeach;?>
-        
-<a href="tickers/view/2"><div id="ex-banner1"><h4>โฆษณาตำแหน่งนี้ 200/เดือน<br>220px x 100px คลิก</h4></div></a>
+
+<a href="tickers/view/2"><img src="holder.js/220x100?text=โฆษณาตำแหน่งนี้ 200/เดือน \n 220px x 100px คลิก" class="img-fluid"></a>
 <br>

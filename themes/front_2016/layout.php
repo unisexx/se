@@ -28,7 +28,7 @@
                 <?php // echo modules::run('banners/inc_home_footer');?>
             </div>
             <div class="col-sm-3">
-                <?// include "_sidebar.php";?>
+                <?include "_sidebar.php";?>
             </div>
     </div>
     <? include "_footer.php";?>

@@ -6,6 +6,7 @@
 <script src="media/bootstrap-4.0.0-alpha.2/docs/dist/js/bootstrap.min.js"></script>
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 <script src="media/bootstrap-4.0.0-alpha.2/docs/assets/js/ie10-viewport-bug-workaround.js"></script>
+<script src="media/js/holderJS/holder.min.js"></script>
 
 <script type="text/javascript">
   var _gaq = _gaq || [];
@@ -21,6 +22,8 @@
 
 <script>
 $(document).ready(function(){
-	$('.newcontent iframe').removeAttr('width').removeAttr('height').addClass('embed-responsive-item').wrap('<div class="embed-responsive embed-responsive-16by9"></div>');
+	$('.newcontent iframe,.newcontent object,.newcontent video').removeAttr("style").removeAttr('width').removeAttr('height').addClass('embed-responsive-item').wrap('<div class="embed-responsive embed-responsive-16by9"></div>');
+	
+	$(".newcontent img").addClass("img-fluid");
 });
 </script>

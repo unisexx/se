@@ -1,3 +1,48 @@
+<div class="row">
+	
+<ol class="breadcrumb" style="margin-bottom: 5px;">
+  <li><a href="">หน้าแรก</a></li>
+  <li><a href="vdos">ซีรีย์เกาหลีซับไทยออนไลน์</a></li>
+  <li class="active"><?=$category->name?></li>
+</ol>
+
+<h1><?=$category->name?></h1>
+<?=addThis()?>
+    <div class="newcontent">
+        <?=$category->detail?>
+        
+        <h2>ดูซีรีย์เรื่อง <?=$category->name?> ออนไลน์</h2>
+		<table class="table table-striped table-bordered table-condensed ep-list">
+		  <thead>
+		    <tr>
+		      <th>ตอนที่</th>
+		      <th>วิว</th>
+		      <th>วันที่</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		      <?php foreach($epsode as $ep):?>
+		        <tr>
+		          <td><a class="btn btn-primary" role="button" href="vdos/series_online/ดูซีรีย์เกาหลี-<?=clean_url($category->name)?>-<?=$ep->title?>-ซับไทย-ออนไลน์-<?=$ep->id?>"><?=$ep->title?></a>
+		          <td><?=$ep->counter;?></td>
+		          <td><?=$ep->created?></td>
+		        </tr>
+		      <?php endforeach;?>
+		  </tbody>
+		</table>
+
+    </div>
+<?=fanpage_button();?>
+<?=facebook_comment();?>
+
+<?php // echo modules::run('vdos/related_series'); ?>
+
+</div>
+
+
+
+
+<!--
 <ul class="breadcrumb">
     <li><a href="home">หน้าแรก</a> <span class="divider">/</span></li>
     <li><a href="vdos">ซีรีย์เกาหลีซับไทยออนไลน์</a> <span class="divider">/</span></li>
@@ -31,3 +76,4 @@
 </table>
 <?php echo modules::run('vdos/related_series'); ?>
 <?=facebook_comment();?>
+-->
