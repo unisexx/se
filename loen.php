@@ -37,12 +37,14 @@ if($links)
 	if(!empty($result)){
 		foreach ($result as $key => $url){
 			$data['youtubeid'] = getYouTubeIdFromURL($url);
-			$content = file_get_contents("http://youtube.com/get_video_info?video_id=".$data['youtubeid']);
-			parse_str($content, $youtube_title);
+			$html = file_get_html($url);
+			// $content = file_get_contents("http://youtube.com/get_video_info?video_id=".$data['youtubeid']);
+			// parse_str($content, $youtube_title);
 			
 			//This gives you the video title
-			$data['title'] = $youtube_title['title'];
+			// $data['title'] = $youtube_title['title'];
 
+			$data['title'] = trim($html->find('#eow-title',0)->plaintext);
 			$data['url'] = "http://www.youtube.com/watch?v=".$data['youtubeid'];
 	        $data['slug'] = clean_url($data['title']);
 	        $data['video_script'] = $data['url'];
@@ -51,7 +53,7 @@ if($links)
 	        $data['status'] = 'approve';
 	        $data['chanel'] = 'loen';
 	        $db->AutoExecute('mvs',$data,'INSERT');
-	        // print "<br>".++$key." $url insert";
+	        print "<br>".++$key." $url insert";
 	        unset($html);
 	        unset($data);
 		}
