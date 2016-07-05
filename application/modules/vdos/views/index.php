@@ -10,14 +10,16 @@
 <div class="row">
 <?php foreach($categories as $category):?>
 <div class="col-lg-6">
+<a class="media-left" href="vdos/view/<?=$category->slug?>" target="_blank">
 <div class="media">
-  <a class="media-left" href="vdos/view/<?=$category->slug?>" target="_blank">
-    <?=thumb($category->image,260,180,1,$param = NULL)?>
-  </a>
+  <div class="media-left">
+    <?=thumb($category->image,120,90,1,$param = NULL)?>
+  </div>
   <div class="media-body">
     <h4 class="media-heading"><?=$category->name?></h4>
   </div>
 </div>
+</a>
 </div>
 <?php endforeach;?>
 </div><!--/row-->

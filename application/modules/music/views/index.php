@@ -10,14 +10,16 @@
 <div class="row">
 <?php foreach($rs as $music):?>
 <div class="col-lg-6">
+<a class="media-left" href="music/view/<?=$music->slug?>/<?=$music->id?>" target="_blank">
 <div class="media">
-  <a class="media-left" href="music/view/<?=$music->slug?>/<?=$music->id?>" target="_blank">
+  <div class="media-left">
     <?=get_img_from_detail($music->detail,120,120,1,'alt="'.$music->title.'"')?>
-  </a>
+  </div>
   <div class="media-body">
     <h4 class="media-heading"><?=$music->title?></h4>
   </div>
 </div>
+</a>
 </div>
 <?php endforeach;?>
 </div><!--/row-->

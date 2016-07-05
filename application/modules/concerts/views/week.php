@@ -25,14 +25,16 @@
 
 <?php foreach($vids as $vid):?>
 <div class="col-lg-12">
+<a class="media-left" href="concerts/watch/<?=$vid->slug?>" target="_blank">
 <div class="media">
-  <a class="media-left" href="concerts/watch/<?=$vid->slug?>" target="_blank">
+  <div class="media-left">
     <?=thumb("http://img.youtube.com/vi/".getYouTubeIdFromURL($vid->url)."/0.jpg",124,70,1)?>
-  </a>
+  </div>
   <div class="media-body">
     <h4 class="media-heading"><?=$vid->title?></h4>
   </div>
 </div>
+</a>
 </div>
 <?php endforeach;?>
 </div><!--/row-->

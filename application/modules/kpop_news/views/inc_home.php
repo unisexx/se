@@ -3,14 +3,16 @@
 <div class="row">
 <?php foreach($news as $new):?>
 <div class="col-lg-6">
+<a class="media-left" href="ข่าวเกาหลี/<?=$new->slug?>" target="_blank">
 <div class="media">
-  <a class="media-left" href="ข่าวเกาหลี/<?=$new->slug?>" target="_blank">
+  <div class="media-left">
     <?=get_img_from_detail($new->detail,120,90,1,'alt="'.$new->title.'"')?>
-  </a>
+  </div>
   <div class="media-body">
     <h4 class="media-heading"><?=$new->title?></h4>
   </div>
 </div>
+</a>
 </div>
 <?php endforeach;?>
 </div><!--/row-->
