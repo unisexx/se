@@ -1,8 +1,9 @@
 <h2 class="headline">เพลงเกาหลี</h2>
+<a class="more-link" href="music">ดูทั้งหมด ></a>
 <div class="row">
 	<?php foreach($musics as $music):?>
-		<div class="col-lg-2">
-			<a href="music/view/<?=$music->slug?>/<?=$music->id?>" target="_blank">
+		<div class="col-lg-2 col-sm-4 col-xs-6 text-xs-center">
+			<a href="music/view/<?=$music->slug?>/<?=$music->id?>">
 			  <?=get_img_from_detail($music->detail,100,100,1,'alt="'.$music->title.'"')?>
 		      <h3><?=$music->title?></h3>
 		    </a>

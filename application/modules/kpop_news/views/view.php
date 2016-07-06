@@ -25,6 +25,7 @@
 	  </a>
 	  <div class="media-body">
 	    <h4 class="media-heading"><?=$row->title?></h4>
+	    <small class="text-muted"><i class="fa fa-clock-o" aria-hidden="true"></i> <?=mysql_to_th($row->created)?></small>
 	  </div>
 	</div>
 </div>

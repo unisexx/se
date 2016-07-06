@@ -30,7 +30,6 @@
         </tr>
     <?php endforeach;?>
 </table>
-<?=fanpage_button();?>
 <?=facebook_comment();?>
 
 </div>

@@ -1,16 +1,19 @@
 body{
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 14px;
-    line-height: 1.428571429;
     color: #545454;
 }
+
+a {color: #333;}
 
 h1{font-size: 25px !important;}
 h2{font-size: 18px !important;}
 h3{font-size: 16px !important;}
 h4{font-size: 15px !important;}
 
-section{margin-bottom:30px;}
+section{margin-bottom:30px; position:relative;}
+
+.more-link{position:absolute; top:5px; right:10px;}
 
 h2.headline{
 	border-bottom: 1px solid #d4d4d4;
@@ -21,6 +24,8 @@ h2.headline{
 }
 
 .newcontent img{max-width:100% !important;}
+.newcontent a{color:#f93b81; font-weight: bold;}
+
 .navbar-dark .navbar-brand{
     color: #ffeb3b !important;
 }
