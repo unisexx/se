@@ -9,6 +9,7 @@
 
 <div class="row">
 <?php foreach($categories as $category):?>
+<?$lastestEP = $category->vdo->where("category_id = ".$category->id)->order_by('orderlist desc , id desc')->get();?>
 <div class="col-lg-6">
 <a class="media-left" href="vdos/view/<?=$category->slug?>" target="_blank">
 <div class="media">
@@ -17,6 +18,8 @@
   </div>
   <div class="media-body">
     <h4 class="media-heading"><?=$category->name?></h4>
+    <div>ตอนล่าสุด : <?=$lastestEP->title?></div>
+    <div>สถานะ : <?=$category->end == "end" ? 'จบเรื่องแล้ว' : 'ยังไม่จบ' ;?></div>
   </div>
 </div>
 </a>

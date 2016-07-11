@@ -5,6 +5,9 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
 		<title><?php echo $template['title']; ?></title> 
         <link rel="shortcut icon" type="image/x-icon" href="http://www.zulex.co.th/favicon.ico">
+        <!-- Bootstrap core CSS -->
+		<link href="media/bootstrap-4.0.0-alpha.2/docs/dist/css/bootstrap.min.css" rel="stylesheet">
+		
 		<link rel="stylesheet" href="media/css/reset.css" type="text/css" media="screen" charset="utf-8" />
 		<link rel="stylesheet" href="media/css/default.css" type="text/css" media="screen" charset="utf-8" />
 		<link rel="stylesheet" href="media/css/pagination.css" type="text/css" media="screen" charset="utf-8" />

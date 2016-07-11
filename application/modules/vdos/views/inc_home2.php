@@ -10,6 +10,7 @@
   </div>
   <div class="media-body">
     <h3 class="media-heading"><?=$vdo->category->name?> - <?=$vdo->title?></h3>
+    <?=is_today($vdo->created)?>
   </div>
 </div>
 </a>

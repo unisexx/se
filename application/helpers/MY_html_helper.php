@@ -184,7 +184,8 @@ function YoutubeIframeConverter($iframeCode,$type=false,$param=false){
 
 function dailymotion($dailymotionurl){
    $id = strtok(basename($dailymotionurl), '_');
-   return '<iframe frameborder="0" width="640" height="390" src="http://www.dailymotion.com/embed/video/'.$id.'"></iframe><div class="alert"><a href="http://www.dailymotion.com/video/'.$id.'" target="_blank" class="btn btn-info"><i class="icon-exclamation-sign"></i> เปิด Dailymotion แล้วจอดำคลิกที่นี่จ้า</a></div>';
+   return '<iframe frameborder="0" width="640" height="390" src="http://www.dailymotion.com/embed/video/'.$id.'"></iframe>';
+   // return '<iframe frameborder="0" width="640" height="390" src="http://www.dailymotion.com/embed/video/'.$id.'"></iframe><div class="alert"><a href="http://www.dailymotion.com/video/'.$id.'" target="_blank" class="btn btn-info"><i class="icon-exclamation-sign"></i> เปิด Dailymotion แล้วจอดำคลิกที่นี่จ้า</a></div>';
 }
 
 function mthai($mthaiurl){
@@ -195,6 +196,13 @@ function mthai($mthaiurl){
 function kodhit($kodhiturl){
 	//return '<a class="btn btn-mini" href="'.$kodhiturl.'" target="_blank">ดูแบบตอนเดียวคลิกที่นี่</a><br><br>';
 	return '<iframe frameborder="0" width="640" height="390"  src="http://r14---sn-30a7en76.googlevideo.com/videoplayback?id=5ae52c2e0c2ca3ac&itag=22&source=picasa&ip=0.0.0.0&ipbits=0&expire=1368349209&sparams=id,itag,source,ip,ipbits,expire&signature=9A0BD431F7137E50CCAF8189DE8418F45B3E1E42.D3E36628B6DF21BED25E37AA42374054A2C86601&key=lh1&ms=nxu&newshard=yes&mv=m&mt=1365757393&cms_redirect=yes"></iframe>';
+}
+
+function tune($tuneUrl){
+	// $tuneUrl = "http://tune.pk/video/6540505/lucky2v2-muxed001";
+	$parts = explode('/', rtrim($tuneUrl, '/'));
+	// echo $parts[4];
+	return '<iframe width="600" height="350" src="https://tune.pk/player/embed_player.php?vid='.$parts[4].'&width=600&height=350&autoplay=no" frameborder="0" allowfullscreen scrolling="no"></iframe><br>';
 }
 
 function youtube($youtubeurl){
@@ -235,6 +243,8 @@ function get_vdo($s){
                 echo mthai($item);
 			}else if(filterUrl($item) == 'www.kodhit.com'){
                 echo kodhit($item);
+        	}else if(filterUrl($item) == 'tune.pk'){
+                echo tune($item);
         	}else{
         	    // echo '<iframe frameborder="0" width="640" height="390" src="'.$item.'"></iframe>';
         	    // echo '<video width="640" height="390" controls><source src="'.$item.'" type="video/mp4"></video><br><a class="btn btn-mini pull-right" href="'.$item.'" target="_blank">ดาวน์โหลดซีรีย์เกาหลีตอนนี้</a><br clear="all"><br>';
@@ -304,5 +314,14 @@ function meta_description($description=false){
     }else{
         $CI->template->append_metadata( meta('description','อัพเดทข่าวสาร ความเคลื่อนไหว k-pop ข่าวบันเทิงเกาหลี เพลงเกาหลี ซีรีย์เกาหลี มิวสิควีดีโอเกาหลี ชาร์ตเพลงเกาหลี นักร้องเกาหลี ศิลปินเกาหลี วาไรตี้เกาหลี ใหม่ล่าสุด'));
     }
+}
+
+function is_today($datetime){
+	$my_date = new DateTime($datetime);
+	if($my_date->format('Y-m-d') == date('Y-m-d')) {
+	    return '<small class="text-warning"><i class="fa fa-clock-o" aria-hidden="true"></i> '.mysql_to_th($datetime).'</small>';
+	}else{
+		return '<small class="text-muted"><i class="fa fa-clock-o" aria-hidden="true"></i> '.mysql_to_th($datetime).'</small>';
+	}
 }
 ?>

@@ -11,10 +11,10 @@
 <?=addThis()?>
     <div class="newcontent">
         <?=get_vdo($vdo->vdo_script)?>
-        <br>
+        <!-- <br>
         <a href="http://www.kpoplover.com/tickers/view/8" target="_blank"><div class="alert alert-success">วิธีแก้ปัญหาดู dailymotion แล้วกระตุก หยุด หรือค้าง</div></a>
 		<div class="alert alert-success"><strong>สำหรับคนที่ใช้เน็ตทรู และดูซีรีย์จากเว็บ Dailymotion ไม่ได้</strong><p>ให้เข้าไปทำตามลิ้งค์นี้ครับ <a href="http://goo.gl/4CXjCZ" target="_blank">คลิก</a> โดยทำตามขั้นตอนในรูป<br>ตรงข้อสาม ใส่ช่อง address ใส่ว่า proxy.trueinternet.co.th และ Port ใส่ 8080 แล้วติ๊กถูกตรง Bypass Proxy</p></div>
-		<div class="alert alert-success">วิดีโอตอนไหนถูกลบไปแล้วให้พิมพ์คอมเม้นที่ด้านล่างทิ้งไว้ได้เลยครับ<br>ถ้าทางเราหาไฟล์มาอัพเดทให้ใหม่แล้วจะแจ้งตอบกลับไปที่คอมเม้นของท่านครับ ^^</div>
+		<div class="alert alert-success">วิดีโอตอนไหนถูกลบไปแล้วให้พิมพ์คอมเม้นที่ด้านล่างทิ้งไว้ได้เลยครับ<br>ถ้าทางเราหาไฟล์มาอัพเดทให้ใหม่แล้วจะแจ้งตอบกลับไปที่คอมเม้นของท่านครับ ^^</div> -->
 		<br clear="all">
         
         <h2>ดูซีรีย์เรื่อง <?=$vdo->category->name?> ออนไลน์</h2>

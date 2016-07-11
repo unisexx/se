@@ -17,7 +17,7 @@
   </div>
   <div class="media-body">
     <h4 class="media-heading"><?=$mv->title?></h4>
-    <small class="text-muted"><i class="fa fa-clock-o" aria-hidden="true"></i> <?=mysql_to_th($mv->created)?></small>
+    <?=is_today($mv->created)?>
   </div>
 </div>
 </a>

@@ -17,7 +17,7 @@
   </div>
   <div class="media-body">
     <h4 class="media-heading"><?=$music->title?></h4>
-    <small class="text-muted"><i class="fa fa-clock-o" aria-hidden="true"></i> <?=mysql_to_th($music->created)?></small>
+    <?=is_today($music->created)?>
   </div>
 </div>
 </a>
