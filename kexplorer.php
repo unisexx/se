@@ -21,13 +21,13 @@ if($links)
 	foreach ($links as $key => $link){
             $url = "$link";
 			$html = file_get_html($url);
-			$data['title'] = trim($html->find('h1.entry-title',0)->plaintext);
+			$data['title'] = trim($html->find('h1.title',0)->plaintext);
 			$data['slug'] = clean_url($data['title']);
             $data['webboard_category_id'] = 12;
             $data['type'] = 'normal';
             $detail = '';
-            for($i=0;$i<count($html->find('.post-entry',0)->find('p'));$i++){
-            $detail .= "<p>".$html->find('.post-entry',0)->find('p',$i)->innertext."</p>";
+            for($i=0;$i<count($html->find('.post-single-content',0)->find('p'));$i++){
+            $detail .= "<p>".$html->find('.post-single-content',0)->find('p',$i)->innertext."</p>";
             }
             $data['detail'] = $detail;
 			$data['created'] = time();
@@ -54,7 +54,7 @@ function get_link()
 {
     global $db;
     $html = file_get_html('http://kpopexplorer.net');
-    foreach($html->find('h2.entry-title a') as $key => $data)
+    foreach($html->find('h2.title a') as $key => $data)
     {
         if($key == 0 )$next = $data->href;
         if (!preg_match("/^\//", $data->href)) 
