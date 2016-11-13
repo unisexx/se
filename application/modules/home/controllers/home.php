@@ -62,5 +62,25 @@ class Home extends Public_Controller {
 	function under_construction(){
 		$this->template->build('under_contruction');
 	}
+	
+	function convert(){
+		$rs = new Kpop_new();
+        $rs->where("image is null and source = 'pingbook'")->limit(1000)->order_by('id','desc')->get();
+		
+		foreach($rs as $row){
+			preg_match('/src="([^"]*)"/i',$row->detail, $result);
+			$search = array('http://www.pingbook.com/archive','/01/','/02/','/03/','/04/','/05/','/06/','/07/','/08/','/09/','/10/','/11/','/12/');
+			$replace = array('https://www.pingbook.com/wp-content/uploads','/10/','/10/','/10/','/10/','/10/','/10/','/10/','/10/','/10/','/10/','/10/','/10/');
+			
+			// str_replace($search,$replace,substr($result[0],5,-1));
+			
+			$new = new Kpop_new($row->id);
+            $_POST['image'] = str_replace($search,$replace,substr($result[0],5,-1));
+    		$new->from_array($_POST);
+    		$new->save();
+			unset($_POST);
+        	unset($new);
+		}
+	}
 }
 ?>

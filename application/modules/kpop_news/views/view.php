@@ -1,3 +1,9 @@
+<?php
+	// pingbook ลิ้งค์รูปเว็บใหม่
+	$search = array('http://www.pingbook.com/archive');
+	$replace = array('https://www.pingbook.com/wp-content/uploads');
+?>
+	
 <div class="row">
 	
 <ol class="breadcrumb" style="margin-bottom: 5px;">
@@ -10,7 +16,10 @@
 <?=addThis()?>
     <div class="newcontent">
         <?=get_facebook_thumbnail($new->detail)?>
-        <?=preg_replace('#</?a(\s[^>]*)?>#i', '', $new->detail)?>
+        <?if($new->url != ""):?>
+        <p><img src="<?=$new->image?>"></p>
+        <?endif;?>
+        <?=str_replace($search,$replace,preg_replace('#</?a(\s[^>]*)?>#i', '', $new->detail))?>
     </div>
 <?// =fanpage_button();?>
 <?=facebook_comment();?>
@@ -21,7 +30,7 @@
 <div class="col-lg-6">
 	<div class="media">
 	  <a class="media-left" href="ข่าวเกาหลี/<?=$row->slug?>">
-	    <?=get_img_from_detail($row->detail,120,90,1,'alt="'.$row->title.'"')?>
+	    <?=thumb($row->image,120,90,1,'alt="'.$row->title.'"')?>
 	  </a>
 	  <div class="media-body">
 	    <h4 class="media-heading"><?=$row->title?></h4>

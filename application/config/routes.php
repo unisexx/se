@@ -69,7 +69,10 @@ $route['sticker'] = 'stickers';
 $route['sticker/([^/]+)'] = 'stickers/view/$1';
 $route['sticker/list'] = 'stickers/lists';
 $route['theme/([^/]+)'] = 'stickers/theme/$1';
- 
+
+// เทสระบบ
+$route['test'] = 'home/convert';
+
 /* Ex : $route['contents/([^/]+)'] = "contents/index/$1"; */
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

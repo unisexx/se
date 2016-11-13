@@ -13,7 +13,7 @@
 <a href="ข่าวเกาหลี/<?=$new->slug?>">
 <div class="media">
   <div class="media-left">
-    <?=get_img_from_detail($new->detail,120,90,1,'alt="'.$new->title.'"')?>
+  	<?=thumb($new->image,120,90,1,'alt="'.$new->title.'"')?>
   </div>
   <div class="media-body">
     <h4 class="media-heading"><?=$new->title?></h4>

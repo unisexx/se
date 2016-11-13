@@ -268,8 +268,8 @@ function get_vdo($s){
 }
 
 function get_img_from_detail($html,$width,$height,$zoom,$param=false){
-    preg_match('/src="([^"]*)"/i',$html, $result); 
-    return thumb(substr($result[0],5,-1),$width,$height,$zoom,$param);
+    preg_match('/src="([^"]*)"/i',$html, $result);
+    return @thumb(substr($result[0],5,-1),$width,$height,$zoom,$param);
 }
 
 /*
