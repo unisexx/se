@@ -21,9 +21,9 @@
       <li class="nav-item">
         <a class="nav-link" href="concerts">Concert</a>
       </li>
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a class="nav-link" href="vdos">Series</a>
-      </li>
+      </li> -->
       <!-- <li class="nav-item">
         <a class="nav-link" href="webboards">Webboard</a>
       </li> -->

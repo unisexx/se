@@ -16,9 +16,6 @@
 <?=addThis()?>
     <div class="newcontent">
         <?=get_facebook_thumbnail($new->detail)?>
-        <?if($new->url != ""):?>
-        <p><img src="<?=$new->image?>"></p>
-        <?endif;?>
         <?=str_replace($search,$replace,preg_replace('#</?a(\s[^>]*)?>#i', '', $new->detail))?>
     </div>
 <?// =fanpage_button();?>

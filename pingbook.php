@@ -24,8 +24,12 @@ if($links)
         $html = file_get_html($link);
 		$data['image'] = trim($html->find('#mvp-post-content-wrap img.wp-post-image',0)->src);
         $data['title'] = trim($html->find('h1[itemprop=headline]',0)->plaintext);
-             $data['detail'] = $html->find('#mvp-content-main',0)->find('.seed-social',0)->outertext = '';
-        $data['detail'] = trim($html->find('#mvp-content-main',0)->innertext);
+		$detail = '';
+		$detail .= "<p><img src='".$data['image']."'></p>";
+		$detail .= $html->find('#mvp-content-main',0)->find('.seed-social',0)->outertext = '';
+        $detail .= trim($html->find('#mvp-content-main',0)->innertext);
+		$detail .= "<br> Source : pingbook entertainment";
+		$data['detail'] = $detail;
         $data['slug'] = clean_url($data['title']);
         $data['created'] = time();
         $data['source'] = 'pingbook';
