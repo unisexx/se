@@ -10,6 +10,6 @@
         <section id="music"><?php echo modules::run('webboards/inc_home'); ?></section>
         <section id="mv"><?php echo modules::run('music_videos/inc_home'); ?></section>
         <?php // echo modules::run('concerts/inc_home'); ?>
-        <!-- <section id="series"><?php echo modules::run('vdos/inc_home2'); ?></section> -->
+        <!-- <section id="series"><?php // echo modules::run('vdos/inc_home2'); ?></section> -->
     </div>
   </div> 

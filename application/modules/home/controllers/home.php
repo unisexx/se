@@ -65,17 +65,25 @@ class Home extends Public_Controller {
 	
 	function convert(){
 		$rs = new Kpop_new();
-        $rs->where("image is null and source = 'pingbook'")->limit(1000)->order_by('id','desc')->get();
+        $rs->where("source = 'pingbook' and id between 15204 and 17203")->order_by('id','desc')->get();
 		
 		foreach($rs as $row){
-			preg_match('/src="([^"]*)"/i',$row->detail, $result);
-			$search = array('http://www.pingbook.com/archive','/01/','/02/','/03/','/04/','/05/','/06/','/07/','/08/','/09/','/10/','/11/','/12/');
-			$replace = array('https://www.pingbook.com/wp-content/uploads','/10/','/10/','/10/','/10/','/10/','/10/','/10/','/10/','/10/','/10/','/10/','/10/');
+			// $xpath = new DOMXPath(@DOMDocument::loadHTML($row->detail));
+			// $src = $xpath->evaluate("string(//img /@src)");
+
+			// $search = array('http://www.pingbook.com/archive','/01/','/02/','/03/','/04/','/05/','/06/','/07/','/08/','/09/','/10/','/11/','/12/');
+			// $replace = array('https://www.pingbook.com/wp-content/uploads/2016','/10/','/10/','/10/','/10/','/10/','/10/','/10/','/10/','/10/','/10/','/10/','/10/');
+			
+			// $search = array('http://www.pingbook.com/archive');
+			// $replace = array('https://www.pingbook.com/wp-content/uploads/2016/10');
+			
+			$search = array('wp-content/uploads/2016/10/2015/08/');
+			$replace = array('wp-content/uploads/2016/10/');
 			
 			// str_replace($search,$replace,substr($result[0],5,-1));
 			
 			$new = new Kpop_new($row->id);
-            $_POST['image'] = str_replace($search,$replace,substr($result[0],5,-1));
+            $_POST['detail'] = str_replace($search,$replace,$row->detail);
     		$new->from_array($_POST);
     		$new->save();
 			unset($_POST);
