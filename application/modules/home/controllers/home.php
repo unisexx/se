@@ -64,31 +64,45 @@ class Home extends Public_Controller {
 	}
 	
 	function convert(){
-		$rs = new Kpop_new();
-        $rs->where("source = 'pingbook' and id between 15204 and 17203")->order_by('id','desc')->get();
+		$rs = new Music_video();
+        $rs->where("youtube_url is null and chanel is null")->order_by('id','desc')->get(1000);
 		
 		foreach($rs as $row){
-			// $xpath = new DOMXPath(@DOMDocument::loadHTML($row->detail));
-			// $src = $xpath->evaluate("string(//img /@src)");
-
-			// $search = array('http://www.pingbook.com/archive','/01/','/02/','/03/','/04/','/05/','/06/','/07/','/08/','/09/','/10/','/11/','/12/');
-			// $replace = array('https://www.pingbook.com/wp-content/uploads/2016','/10/','/10/','/10/','/10/','/10/','/10/','/10/','/10/','/10/','/10/','/10/','/10/');
-			
-			// $search = array('http://www.pingbook.com/archive');
-			// $replace = array('https://www.pingbook.com/wp-content/uploads/2016/10');
-			
-			$search = array('wp-content/uploads/2016/10/2015/08/');
-			$replace = array('wp-content/uploads/2016/10/');
-			
-			// str_replace($search,$replace,substr($result[0],5,-1));
-			
-			$new = new Kpop_new($row->id);
-            $_POST['detail'] = str_replace($search,$replace,$row->detail);
-    		$new->from_array($_POST);
-    		$new->save();
+			$mv = new Music_video($row->id);
+            $_POST['youtube_url'] = 'https://www.youtube.com/watch?v='.getYoutubeIdFromDetail($row->video_script);
+    		$mv->from_array($_POST);
+    		$mv->save();
 			unset($_POST);
         	unset($new);
 		}
 	}
+
+	// function convert(){
+		// $rs = new Kpop_new();
+        // $rs->where("source = 'pingbook' and id between 15204 and 17203")->order_by('id','desc')->get();
+// 		
+		// foreach($rs as $row){
+			// // $xpath = new DOMXPath(@DOMDocument::loadHTML($row->detail));
+			// // $src = $xpath->evaluate("string(//img /@src)");
+// 
+			// // $search = array('http://www.pingbook.com/archive','/01/','/02/','/03/','/04/','/05/','/06/','/07/','/08/','/09/','/10/','/11/','/12/');
+			// // $replace = array('https://www.pingbook.com/wp-content/uploads/2016','/10/','/10/','/10/','/10/','/10/','/10/','/10/','/10/','/10/','/10/','/10/','/10/');
+// 			
+			// // $search = array('http://www.pingbook.com/archive');
+			// // $replace = array('https://www.pingbook.com/wp-content/uploads/2016/10');
+// 			
+			// $search = array('wp-content/uploads/2016/10/2015/08/');
+			// $replace = array('wp-content/uploads/2016/10/');
+// 			
+			// // str_replace($search,$replace,substr($result[0],5,-1));
+// 			
+			// $new = new Kpop_new($row->id);
+            // $_POST['detail'] = str_replace($search,$replace,$row->detail);
+    		// $new->from_array($_POST);
+    		// $new->save();
+			// unset($_POST);
+        	// unset($new);
+		// }
+	// }
 }
 ?>

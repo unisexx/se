@@ -327,4 +327,23 @@ function is_today($datetime){
 		return '<small class="text-muted"><i class="fa fa-clock-o" aria-hidden="true"></i> '.mysql_to_th($datetime).'</small>';
 	}
 }
+
+function getYoutubeIdFromDetail($url){
+	if (preg_match('/youtube\.com\/watch\?v=([^\&\?\/]+)/', $url, $id)) {
+	  $values = $id[1];
+	} else if (preg_match('/youtube\.com\/embed\/([^\&\?\/]+)/', $url, $id)) {
+	  $values = $id[1];
+	} else if (preg_match('/youtube\.com\/v\/([^\&\?\/]+)/', $url, $id)) {
+	  $values = $id[1];
+	} else if (preg_match('/youtu\.be\/([^\&\?\/]+)/', $url, $id)) {
+	  $values = $id[1];
+	} else if (preg_match('/youtube\.com\/verify_age\?next_url=\/watch%3Fv%3D([^\&\?\/]+)/', $url, $id)) {
+	    $values = $id[1];
+	} else {   
+	// not an youtube video
+	}
+
+return @$values;
+}
+
 ?>
