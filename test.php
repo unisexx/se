@@ -1,15 +1,33 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml">
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<link rel="shortcut icon" href="favicon.ico">
-	<title>testless</title>
-	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
-	<link type="text/css" rel="stylesheet/less" href="media/css/styles.less" />
-	<script type="text/javascript" src="http://lesscss.googlecode.com/files/less-1.3.0.min.js"></script>
-</head>
+<?php
 
-<body>
-	<div class="eee">asdfasdfsaf</div>
-    <div class="fff">asdfasdfsaf</div>
-</body>
+// defined('WP_USE_THEMES') || define('WP_USE_THEMES', false);
+// require_once('wp-load.php');
+// global $wpdb;
+// 
+// $post = array(
+    // 'post_title' => 'post_title',
+    // 'post_content' => 'post_content',
+    // 'post_date' => date("Y-m-d H:i:s"),
+    // 'post_date_gmt' => date("Y-m-d H:i:s"),
+    // 'post_status' => 'publish',
+    // 'post_author' => 1,
+    // 'post_category' => array(1)
+// );
+// wp_insert_post( $post );
+// 	
+
+?>
+
+<?php
+require('wp-blog-header.php');
+?>
+
+<?php
+$posts = get_posts('numberposts=10&order=ASC&orderby=post_title');
+foreach ($posts as $post) : setup_postdata( $post ); ?>
+<?php the_date(); echo "<br />"; ?>
+<?php the_title(); ?>    
+<?php the_excerpt(); ?> 
+<?php
+endforeach;
+?>
