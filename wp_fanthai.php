@@ -27,57 +27,66 @@ global $wpdb;
 //--------------------------------  End include -------------------------------- 
 
 
-$links = get_link123();
+// $links = get_link123();
 // echo "<pre>";
 // print_r($links);
 // echo "</pre>";
 
 
-if($links)
-{
-    foreach ($links as $key => $link)
-    {
-    	$html = file_get_html($link);
+// $html = file_get_html('http://koreaseries.fanthai.com/?p=34489');
+// echo $html;
+// Dumps the internal DOM tree back into string 
+// $str = $html->save();
+
+// Dumps the internal DOM tree back into a file 
+// $html->save('result.htm');
+
+$html = file_get_html('http://koreaseries.fanthai.com/?p=29245');
+echo $data['title'] = trim($html->find('h1.blog-title',0)->plaintext);
 		
-		$data['image'] = trim($html->find('#mvp-post-content-wrap img.wp-post-image',0)->src);
-        $data['title'] = trim($html->find('h1[itemprop=headline]',0)->plaintext);
-		$detail = '';
-		$detail .= "<p><img src='".$data['image']."'></p>";
-		$detail .= $html->find('#mvp-content-main',0)->find('.seed-social',0)->outertext = '';
-        $detail .= trim($html->find('#mvp-content-main',0)->innertext);
-		$detail .= "<br> Source : <a href='".$link."' target='_blank'>pingbook entertainment</a>";
-		$data['detail'] = $detail;
-        $data['slug'] = clean_url555($data['title']);
-        $data['created'] = time();
-        $data['source'] = 'pingbook';
-		$data['status'] = 'approve';
-		$data['url'] = $link;
-        // $db->AutoExecute('kpop_news',$data,'INSERT');
-        
-        ### Wordpress Insert ###
-        $post = array(
-		    'post_title' => $data['title'],
-		    'post_name' => $data['slug'],
-		    'post_content' => $data['detail'],
-		    'post_date' => date("Y-m-d H:i:s"),
-		    'post_date_gmt' => date("Y-m-d H:i:s"),
-		    'post_status' => 'publish',
-		    'post_author' => 1,
-		    'post_category' => array(2)
-		);
-		wp_insert_post( $post );
-
-
-        print "<br>".++$key." $url/news/$link insert";
-        unset($html);
-        unset($data);
-    }
-    print "<br>".count($links)." records updated";
-}
-else
-{
-    print('<br>no data updated');
-}
+		
+// if($links)
+// {
+    // foreach ($links as $key => $link)
+    // {
+    	// if($key == 1){ exit(); }
+// 		
+    	// // $html = file_get_html('http://koreaseries.fanthai.com/?p=34489');
+		// // echo $html;
+		// // echo $html->plaintext;
+// 
+		// // echo $data['title'] = trim($html->find('h1.blog-title',0)->plaintext);
+		// // $detail = '';
+		// // $detail .= "<p><img src='".$data['image']."'></p>";
+		// // $detail .= $html->find('#mvp-content-main',0)->find('.seed-social',0)->outertext = '';
+        // // $detail .= trim($html->find('#mvp-content-main',0)->innertext);
+		// // $detail .= "<br> Source : <a href='".$link."' target='_blank'>pingbook entertainment</a>";
+		// // $data['detail'] = $detail;
+        // // $data['slug'] = clean_url555($data['title']);
+// // 
+        // // $post = array(
+		    // // 'post_title' => $data['title'],
+		    // // 'post_name' => $data['slug'],
+		    // // 'post_content' => $data['detail'],
+		    // // 'post_date' => date("Y-m-d H:i:s"),
+		    // // 'post_date_gmt' => date("Y-m-d H:i:s"),
+		    // // 'post_status' => 'publish',
+		    // // 'post_author' => 1,
+		    // // 'post_category' => array(2)
+		// // );
+		// // wp_insert_post( $post );
+// 
+// 
+        // print "<br>".++$key." $link insert";
+        // unset($html);
+        // unset($data);
+    // }
+    // print "<br>".count($links)." records updated";
+// }
+// else
+// {
+    // print('<br>no data updated');
+// }
 
 
 
@@ -91,8 +100,8 @@ function my_callback($element) {
 function get_link123()
 {
     global $db;
-    $html = file_get_html('https://www.pingbook.com/category/korea');
-    foreach($html->find('.mvp-main-blog-text > a[rel=bookmark]') as $key => $data)
+    $html = file_get_html('http://koreaseries.fanthai.com/?cat=4691');
+    foreach($html->find('h2.entry-title > a[rel=bookmark]') as $key => $data)
     {
         if($key == 0 )$next = $data->href;
         if (!preg_match("/^\//", $data->href)) 

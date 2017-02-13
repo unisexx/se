@@ -37,22 +37,14 @@ if($links)
 {
     foreach ($links as $key => $link)
     {
+    	// if($key == 1){ exit(); }
     	$html = file_get_html($link);
-		
-		$data['image'] = trim($html->find('#mvp-post-content-wrap img.wp-post-image',0)->src);
-        $data['title'] = trim($html->find('h1[itemprop=headline]',0)->plaintext);
-		$detail = '';
-		$detail .= "<p><img src='".$data['image']."'></p>";
-		$detail .= $html->find('#mvp-content-main',0)->find('.seed-social',0)->outertext = '';
-        $detail .= trim($html->find('#mvp-content-main',0)->innertext);
-		$detail .= "<br> Source : <a href='".$link."' target='_blank'>pingbook entertainment</a>";
+        $data['title'] = trim($html->find('.page-header h1',0)->plaintext);
+        $detail = '';
+		$detail .= trim($html->find('section/article/div/div[1]',0)->innertext);
+		$detail .= "<br> Source : <a href='".$link."' target='_blank'>kodhit</a>";
 		$data['detail'] = $detail;
         $data['slug'] = clean_url555($data['title']);
-        $data['created'] = time();
-        $data['source'] = 'pingbook';
-		$data['status'] = 'approve';
-		$data['url'] = $link;
-        // $db->AutoExecute('kpop_news',$data,'INSERT');
         
         ### Wordpress Insert ###
         $post = array(
@@ -62,8 +54,8 @@ if($links)
 		    'post_date' => date("Y-m-d H:i:s"),
 		    'post_date_gmt' => date("Y-m-d H:i:s"),
 		    'post_status' => 'publish',
-		    'post_author' => 1,
-		    'post_category' => array(2)
+		    'post_author' => 4,
+		    'post_category' => array(5255)
 		);
 		wp_insert_post( $post );
 
@@ -91,17 +83,18 @@ function my_callback($element) {
 function get_link123()
 {
     global $db;
-    $html = file_get_html('https://www.pingbook.com/category/korea');
-    foreach($html->find('.mvp-main-blog-text > a[rel=bookmark]') as $key => $data)
+    $html = file_get_html('http://www.kodhit.com/?page=0');
+    foreach($html->find('div/span[3]/a') as $key => $data)
     {
-        if($key == 0 )$next = $data->href;
-        if (!preg_match("/^\//", $data->href)) 
+    	$link = 'http://www.kodhit.com'.$data->href;
+        // if($key == 0 ) $next = $data->href;
+        if (!preg_match("/^\//", $link)) 
         {
             $slug = clean_url555($data->plaintext);
             $check = $db->GetOne('select post_name from wp_posts where post_name = ?',array($slug));
             if(!$check)
             {
-                $feed[] =  $data->href;
+                $feed[] =  $link;
             }
             else
             {

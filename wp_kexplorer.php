@@ -39,19 +39,14 @@ if($links)
     {
     	$html = file_get_html($link);
 		
-		$data['image'] = trim($html->find('#mvp-post-content-wrap img.wp-post-image',0)->src);
-        $data['title'] = trim($html->find('h1[itemprop=headline]',0)->plaintext);
+		$data['title'] = trim($html->find('h1.title',0)->plaintext);
+		$data['slug'] = clean_url555($data['title']);
 		$detail = '';
-		$detail .= "<p><img src='".$data['image']."'></p>";
-		$detail .= $html->find('#mvp-content-main',0)->find('.seed-social',0)->outertext = '';
-        $detail .= trim($html->find('#mvp-content-main',0)->innertext);
-		$detail .= "<br> Source : <a href='".$link."' target='_blank'>pingbook entertainment</a>";
-		$data['detail'] = $detail;
-        $data['slug'] = clean_url555($data['title']);
-        $data['created'] = time();
-        $data['source'] = 'pingbook';
-		$data['status'] = 'approve';
-		$data['url'] = $link;
+        for($i=0;$i<count($html->find('.post-single-content',0)->find('p'));$i++){
+        	$detail .= "<p>".$html->find('.post-single-content',0)->find('p',$i)->innertext."</p>";
+        }
+		$detail .= "<br><br> Source : <a href='".$link."' target='_blank'>kpopexplorer</a>";
+        $data['detail'] = str_replace('[<a href="http://kpopexplorer.net" target="_blank">kpopexplorer.net</a>]',"",$detail);
         // $db->AutoExecute('kpop_news',$data,'INSERT');
         
         ### Wordpress Insert ###
@@ -62,8 +57,8 @@ if($links)
 		    'post_date' => date("Y-m-d H:i:s"),
 		    'post_date_gmt' => date("Y-m-d H:i:s"),
 		    'post_status' => 'publish',
-		    'post_author' => 1,
-		    'post_category' => array(2)
+		    'post_author' => 2,
+		    'post_category' => array(390)
 		);
 		wp_insert_post( $post );
 
@@ -83,38 +78,40 @@ else
 
 /*---------------------------------------function-----------------------------------------------*/
 
-function my_callback($element) {
-        if ($element->class=='like_box')
-                $element->outertext = '';
-    } 
+// function my_callback($element) {
+        // if ($element->class=='like_box')
+                // $element->outertext = '';
+    // } 
 
 function get_link123()
 {
     global $db;
-    $html = file_get_html('https://www.pingbook.com/category/korea');
-    foreach($html->find('.mvp-main-blog-text > a[rel=bookmark]') as $key => $data)
+    $html = file_get_html('http://kpopexplorer.net');
+    foreach($html->find('h2.title a') as $key => $data)
     {
         if($key == 0 )$next = $data->href;
         if (!preg_match("/^\//", $data->href)) 
         {
-            $slug = clean_url555($data->plaintext);
+			$slug = clean_url555($data->plaintext);
+			// echo $slug."<br>";
             $check = $db->GetOne('select post_name from wp_posts where post_name = ?',array($slug));
-            if(!$check)
-            {
-                $feed[] =  $data->href;
-            }
-            else
-            {
-                if(isset($feed))
-                {
-                    sort($feed);
-                    return $feed;
-                }
-                else
-                {
-                    return false;
-                }
-            }
+
+             if(!$check)
+             {
+                 $feed[] =  $data->href;
+             }
+             else
+             {
+                 if(isset($feed))
+                 {
+                     sort($feed);
+                     return $feed;
+                 }
+                 else
+                 {
+                     return false;
+                 }
+             }
                 
         } 
     }

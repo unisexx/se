@@ -1,7 +1,7 @@
 <?php
-$_config['dbdriver'] = 'mysql';
+$_config['dbdriver'] = 'mysqli';
 $_config['server'] = 'localhost';
-$_config['username'] = 'addfrien_kpop';
-$_config['password'] = 'RZSAQiJme9';
-$_config['database'] = 'addfrien_kpop';
+$_config['username'] = 'admin_kpoplover';
+$_config['password'] = 'pE0xZ7vE4V';
+$_config['database'] = 'admin_kpoplover';
 ?>
