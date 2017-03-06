@@ -20,9 +20,9 @@ $db->Execute('SET NAMES utf8');
 // $db->debug =true;
 
 // wordpress function
-defined('WP_USE_THEMES') || define('WP_USE_THEMES', false);
-require_once('wp-load.php');
-global $wpdb;
+// defined('WP_USE_THEMES') || define('WP_USE_THEMES', false);
+// require_once('wp-load.php');
+// global $wpdb;
 
 //--------------------------------  End include -------------------------------- 
 
@@ -41,9 +41,9 @@ global $wpdb;
 // Dumps the internal DOM tree back into a file 
 // $html->save('result.htm');
 
-$html = file_get_html('http://koreaseries.fanthai.com/?p=29245');
-echo $data['title'] = trim($html->find('h1.blog-title',0)->plaintext);
-		
+$html = file_get_html('http://koreaseries.fanthai.com/?p=34953');
+echo $html->find('head', 0) = '';
+
 		
 // if($links)
 // {
@@ -92,61 +92,61 @@ echo $data['title'] = trim($html->find('h1.blog-title',0)->plaintext);
 
 /*---------------------------------------function-----------------------------------------------*/
 
-function my_callback($element) {
-        if ($element->class=='like_box')
-                $element->outertext = '';
-    } 
-
-function get_link123()
-{
-    global $db;
-    $html = file_get_html('http://koreaseries.fanthai.com/?cat=4691');
-    foreach($html->find('h2.entry-title > a[rel=bookmark]') as $key => $data)
-    {
-        if($key == 0 )$next = $data->href;
-        if (!preg_match("/^\//", $data->href)) 
-        {
-            $slug = clean_url555($data->plaintext);
-            $check = $db->GetOne('select post_name from wp_posts where post_name = ?',array($slug));
-            if(!$check)
-            {
-                $feed[] =  $data->href;
-            }
-            else
-            {
-                if(isset($feed))
-                {
-                    sort($feed);
-                    return $feed;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-                
-        } 
-    }
-    if(isset($feed))
-    {
-        sort($feed);
-        return $feed;
-    }
-    else
-    {
-        return false;
-    }
-}
-
-function clean_url555($text)
-{	
-	setlocale(LC_ALL,"Thai");
-	$text=strtolower($text);
-	$code_entities_match = array(' ','--','&quot;','!','@','#','$','%','^','&','*','(',')','_','+','{','}','|',':','"','<','>','?','[',']','\\',';',"'",',','.','/','*','+','~','`','=');
-	$code_entities_replace = array('-','-','','','','','','','','','','','','','','','','','','','','','','','','');
-	$text = str_replace($code_entities_match, $code_entities_replace, $text);
-	$text = @ereg_replace('(--)+', '', $text);
-	$text = @ereg_replace('(-)$', '', $text);
-	return $text;
-} 
+// function my_callback($element) {
+        // if ($element->class=='like_box')
+                // $element->outertext = '';
+    // } 
+// 
+// function get_link123()
+// {
+    // global $db;
+    // $html = file_get_html('http://koreaseries.fanthai.com/?cat=4691');
+    // foreach($html->find('h2.entry-title > a[rel=bookmark]') as $key => $data)
+    // {
+        // if($key == 0 )$next = $data->href;
+        // if (!preg_match("/^\//", $data->href)) 
+        // {
+            // $slug = clean_url555($data->plaintext);
+            // $check = $db->GetOne('select post_name from wp_posts where post_name = ?',array($slug));
+            // if(!$check)
+            // {
+                // $feed[] =  $data->href;
+            // }
+            // else
+            // {
+                // if(isset($feed))
+                // {
+                    // sort($feed);
+                    // return $feed;
+                // }
+                // else
+                // {
+                    // return false;
+                // }
+            // }
+//                 
+        // } 
+    // }
+    // if(isset($feed))
+    // {
+        // sort($feed);
+        // return $feed;
+    // }
+    // else
+    // {
+        // return false;
+    // }
+// }
+// 
+// function clean_url555($text)
+// {	
+	// setlocale(LC_ALL,"Thai");
+	// $text=strtolower($text);
+	// $code_entities_match = array(' ','--','&quot;','!','@','#','$','%','^','&','*','(',')','_','+','{','}','|',':','"','<','>','?','[',']','\\',';',"'",',','.','/','*','+','~','`','=');
+	// $code_entities_replace = array('-','-','','','','','','','','','','','','','','','','','','','','','','','','');
+	// $text = str_replace($code_entities_match, $code_entities_replace, $text);
+	// $text = @ereg_replace('(--)+', '', $text);
+	// $text = @ereg_replace('(-)$', '', $text);
+	// return $text;
+// } 
 ?>

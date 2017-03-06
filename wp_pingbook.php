@@ -24,7 +24,7 @@ defined('WP_USE_THEMES') || define('WP_USE_THEMES', false);
 require_once('wp-load.php');
 global $wpdb;
 
-//--------------------------------  End include -------------------------------- 
+//--------------------------------  End include --------------------------------
 
 
 $links = get_link123();
@@ -38,22 +38,22 @@ if($links)
     foreach ($links as $key => $link)
     {
     	$html = file_get_html($link);
-		
-		$data['image'] = trim($html->find('#mvp-post-content-wrap img.wp-post-image',0)->src);
+
+		    $data['image'] = trim($html->find('#mvp-post-content-wrap img.wp-post-image',0)->src);
         $data['title'] = trim($html->find('h1[itemprop=headline]',0)->plaintext);
-		$detail = '';
-		$detail .= "<p><img src='".$data['image']."'></p>";
-		$detail .= $html->find('#mvp-content-main',0)->find('.seed-social',0)->outertext = '';
+		    $detail = '';
+		    $detail .= "<p><img src='".$data['image']."'></p>";
+		    $detail .= $html->find('#mvp-content-main',0)->find('.seed-social',0)->outertext = '';
         $detail .= trim($html->find('#mvp-content-main',0)->innertext);
-		$detail .= "<br> Source : <a href='".$link."' target='_blank'>pingbook entertainment</a>";
-		$data['detail'] = $detail;
+		    $detail .= "<br> Source : <a href='".$link."' target='_blank'>pingbook entertainment</a>";
+		    $data['detail'] = $detail;
         $data['slug'] = clean_url555($data['title']);
         $data['created'] = time();
         $data['source'] = 'pingbook';
-		$data['status'] = 'approve';
-		$data['url'] = $link;
+		    $data['status'] = 'approve';
+		    $data['url'] = $link;
         // $db->AutoExecute('kpop_news',$data,'INSERT');
-        
+
         ### Wordpress Insert ###
         $post = array(
 		    'post_title' => $data['title'],
@@ -86,22 +86,23 @@ else
 function my_callback($element) {
         if ($element->class=='like_box')
                 $element->outertext = '';
-    } 
+    }
 
 function get_link123()
 {
     global $db;
     $html = file_get_html('https://www.pingbook.com/category/korea');
-    foreach($html->find('.mvp-main-blog-text > a[rel=bookmark]') as $key => $data)
+    foreach($html->find('.menu-item-19890 > li > a') as $key => $data)
     {
         if($key == 0 )$next = $data->href;
-        if (!preg_match("/^\//", $data->href)) 
+        if (!preg_match("/^\//", $data->href))
         {
             $slug = clean_url555($data->plaintext);
             $check = $db->GetOne('select post_name from wp_posts where post_name = ?',array($slug));
             if(!$check)
             {
                 $feed[] =  $data->href;
+                echo $slug."<br>";
             }
             else
             {
@@ -115,8 +116,8 @@ function get_link123()
                     return false;
                 }
             }
-                
-        } 
+
+        }
     }
     if(isset($feed))
     {
@@ -130,7 +131,7 @@ function get_link123()
 }
 
 function clean_url555($text)
-{	
+{
 	setlocale(LC_ALL,"Thai");
 	$text=strtolower($text);
 	$code_entities_match = array(' ','--','&quot;','!','@','#','$','%','^','&','*','(',')','_','+','{','}','|',':','"','<','>','?','[',']','\\',';',"'",',','.','/','*','+','~','`','=');
@@ -139,5 +140,5 @@ function clean_url555($text)
 	$text = @ereg_replace('(--)+', '', $text);
 	$text = @ereg_replace('(-)$', '', $text);
 	return $text;
-} 
+}
 ?>
