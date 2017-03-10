@@ -45,7 +45,7 @@ if($links)
         for($i=0;$i<count($html->find('.post-single-content',0)->find('p'));$i++){
         	$detail .= "<p>".$html->find('.post-single-content',0)->find('p',$i)->innertext."</p>";
         }
-		$detail .= "<br><br> Source : <a href='".$link."' target='_blank'>kpopexplorer</a>";
+		$detail .= "<p>_______________<br>Source : <a href='".$link."' target='_blank'>kpopexplorer</a></p>";
         $data['detail'] = str_replace('[<a href="http://kpopexplorer.net" target="_blank">kpopexplorer.net</a>]',"",$detail);
         // $db->AutoExecute('kpop_news',$data,'INSERT');
         

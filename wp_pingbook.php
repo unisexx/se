@@ -45,7 +45,7 @@ if($links)
 		    $detail .= "<p><img src='".$data['image']."'></p>";
 		    $detail .= $html->find('#mvp-content-main',0)->find('.seed-social',0)->outertext = '';
         $detail .= trim($html->find('#mvp-content-main',0)->innertext);
-		    $detail .= "<br> Source : <a href='".$link."' target='_blank'>pingbook entertainment</a>";
+		    $detail .= "<p>_______________<br>Source : <a href='".$link."' target='_blank'>pingbook entertainment</a></p>";
 		    $data['detail'] = $detail;
         $data['slug'] = clean_url555($data['title']);
         $data['created'] = time();

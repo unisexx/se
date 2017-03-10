@@ -48,7 +48,7 @@ if(@$_GET){
 		foreach($html->find('.news-content > p') as $element){
 		       $detail .= $element ;
 		}
-		$detail .= "<br> Source : <a href='".$_GET['url']."' target='_blank'>siamdara</a>";
+		$detail .= "<p>_______________<br>Source : <a href='".$_GET['url']."' target='_blank'>siamdara</a></p>";
 		$data['detail'] = $detail;
 		
 		$post = array(

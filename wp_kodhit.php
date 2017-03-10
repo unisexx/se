@@ -42,7 +42,7 @@ if($links)
         $data['title'] = trim($html->find('.page-header h1',0)->plaintext);
         $detail = '';
 		$detail .= trim($html->find('section/article/div/div[1]',0)->innertext);
-		$detail .= "<br> Source : <a href='".$link."' target='_blank'>kodhit</a>";
+		$detail .= "<p>_______________<br>Source : <a href='".$link."' target='_blank'>kodhit</a></p>";
 		$data['detail'] = $detail;
         $data['slug'] = clean_url555($data['title']);
         
