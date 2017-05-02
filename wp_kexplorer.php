@@ -39,11 +39,11 @@ if($links)
     {
     	$html = file_get_html($link);
 		
-		$data['title'] = trim($html->find('h1.title',0)->plaintext);
+		$data['title'] = trim($html->find('h1.entry-title',0)->plaintext);
 		$data['slug'] = clean_url555($data['title']);
 		$detail = '';
-        for($i=0;$i<count($html->find('.post-single-content',0)->find('p'));$i++){
-        	$detail .= "<p>".$html->find('.post-single-content',0)->find('p',$i)->innertext."</p>";
+        for($i=0;$i<count($html->find('.td-post-content',0)->find('p'));$i++){
+        	$detail .= "<p>".$html->find('.td-post-content',0)->find('p',$i)->innertext."</p>";
         }
 		$detail .= "<p>_______________<br>Source : <a href='".$link."' target='_blank'>kpopexplorer</a></p>";
         $data['detail'] = str_replace('[<a href="http://kpopexplorer.net" target="_blank">kpopexplorer.net</a>]',"",$detail);
@@ -87,7 +87,7 @@ function get_link123()
 {
     global $db;
     $html = file_get_html('http://kpopexplorer.net');
-    foreach($html->find('h2.title a') as $key => $data)
+    foreach($html->find('.td-ss-main-content h3.entry-title a') as $key => $data)
     {
         if($key == 0 )$next = $data->href;
         if (!preg_match("/^\//", $data->href)) 
